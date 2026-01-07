@@ -1,0 +1,171 @@
+# ========================================
+# Пътна Помощ Website - .htaccess Configuration
+# Production-Ready Security & Performance
+# ========================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ========================================
+  # SECURITY: HTTPS Redirect
+  # ========================================
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Remove www prefix
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,L]
+
+  # ========================================
+  # SECURITY: Block Dangerous Files
+  # ========================================
+  RewriteRule ^\.env$ - [F,L]
+  RewriteRule ^config\.php$ - [F,L]
+  RewriteRule ^debug\.log$ - [F,L]
+  RewriteRule ^\.git - [F,L]
+  RewriteRule ^\.htaccess$ - [F,L]
+
+  # ========================================
+  # FRIENDLY URLs
+  # ========================================
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
+</IfModule>
+
+# ========================================
+# SECURITY HEADERS
+# ========================================
+
+<IfModule mod_headers.c>
+  # Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Enable XSS protection (for older browsers)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # ✅ FIX: Permissions Policy (Feature Policy) – разрешаваме геолокация
+  Header always set Permissions-Policy "geolocation=*, microphone=(), camera=()"
+
+  # Content Security Policy (CSP)
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.elfsight.com https://cdn.jsdelivr.net; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-src https://www.google.com https://static.elfsight.com; base-uri 'self'; form-action 'self'"
+
+  # Strict Transport Security (HSTS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ========================================
+# BROWSER CACHING
+# ========================================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML files (short cache for updates)
+  ExpiresByType text/html "access plus 24 hours"
+
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+
+  # JSON
+  ExpiresByType application/json "access plus 24 hours"
+
+  # Manifest
+  ExpiresByType application/manifest+json "access plus 24 hours"
+</IfModule>
+
+# ========================================
+# GZIP COMPRESSION
+# ========================================
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# ========================================
+# ETAG (Entity Tag)
+# ========================================
+
+<IfModule mod_headers.c>
+  Header unset ETag
+  FileETag None
+</IfModule>
+
+# ========================================
+# DEFAULT ENCODING
+# ========================================
+
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .xml
+
+# ========================================
+# MIME TYPES
+# ========================================
+
+AddType application/javascript js
+AddType application/json json
+AddType application/manifest+json webmanifest
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+AddType font/ttf ttf
+AddType font/otf otf
+AddType font/woff woff
+AddType font/woff2 woff2
+AddType application/font-woff woff
+
+# ========================================
+# DIRECTORY LISTING
+# ========================================
+
+Options -Indexes
+
+# ========================================
+# PHP Handler (cPanel)
+# ========================================
+
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

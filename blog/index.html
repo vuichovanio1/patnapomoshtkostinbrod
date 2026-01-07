@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="bg" itemscope itemtype="https://schema.org/Blog">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог – Пътна Помощ Костинброд 🚀 Съвети, Ръководства и Безопасност</title>
+    <meta name="description" content="Полезни статии за пътна помощ, безопасност, избор на репатрак, цени, действия при катастрофа и бързо изпращане на локация. Практични ръководства от Пътна Помощ Костинброд.">
+    <meta name="keywords" content="блог пътна помощ, съвети при авария, ръководства за шофьори, безопасност на пътя, цени репатрак">
+    <meta name="robots" content="index,follow">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://patna-pomosht-kostinbrod.bg/blog/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Блог – Пътна Помощ Костинброд 🚀">
+    <meta property="og:description" content="Най-полезните съвети за пътна помощ, безопасност, избор на репатрак, цени и действия при авария.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://patna-pomosht-kostinbrod.bg/blog/">
+    <meta property="og:image" content="https://patna-pomosht-kostinbrod.bg/images/memi15.jpg">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Блог – Пътна Помощ Костинброд 🚀">
+    <meta name="twitter:description" content="Полезни съвети за пътна помощ, безопасност и избор на репатрак.">
+    <meta name="twitter:image" content="https://patna-pomosht-kostinbrod.bg/images/memi15.jpg">
+    <!-- Preloads -->
+    <link rel="preload" href="https://patna-pomosht-kostinbrod.bg/images/memi15.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF7A00;
+            --primary-dark: #E55A2B;
+            --secondary: #28a745;
+            --accent: #FFC48A;
+            --dark: #1A1A2E;
+            --light: #fff5f0;
+            --text: #1A1A2E;
+            --muted: #6b7280;
+            --radius: 20px;
+            --transition: all .4s ease;
+            --shadow-md: 0 10px 30px rgba(0,0,0,.12);
+            --max-width: 1200px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 100px;
+        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 16px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        header h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.3rem,4vw,2rem); font-weight: 800; color: #fff; margin: 0; }
+        .header-cta { background: var(--secondary); color: #fff; padding: 12px 20px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; transition: var(--transition); }
+        .header-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(40,167,69,.4); }
+        main { margin-top: 30px; }
+        .intro { text-align: center; margin-bottom: 4rem; padding: 2rem; }
+        .intro h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2.5rem,7vw,4.5rem); color: var(--primary); margin-bottom: 1.5rem; font-weight: 800; }
+        .intro p { font-size: 1.2rem; color: var(--muted); max-width: 900px; margin: 0 auto; }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .blog-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .blog-card:hover { transform: translateY(-12px); box-shadow: 0 20px 50px rgba(255,122,0,.25); }
+        .blog-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .blog-card:hover img { transform: scale(1.05); }
+        .blog-card-body {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card-body h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 0 0 1rem;
+            line-height: 1.3;
+        }
+        .blog-card-body p {
+            color: var(--muted);
+            margin-bottom: 2rem;
+            flex: 1;
+            font-size: 1.05rem;
+        }
+        .blog-card-body a {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 800;
+            align-self: flex-start;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(255,122,0,.3);
+        }
+        .blog-card-body a:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(255,122,0,.4); }
+        .faq-section {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            margin: 4rem 0;
+            box-shadow: var(--shadow-md);
+        }
+        .faq-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 2.5rem;
+        }
+        .faq details {
+            margin: 1.2rem 0;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,.05);
+            transition: var(--transition);
+        }
+        .faq details:hover { transform: translateY(-4px); }
+        .faq summary {
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .mobile-cta-bar { 
+            position: fixed; 
+            bottom: 0; left: 0; right: 0; 
+            background: var(--dark); 
+            padding: 0.8rem; 
+            display: flex; 
+            gap: 12px; 
+            z-index: 999; 
+            box-shadow: 0 -4px 20px rgba(0,0,0,.2);
+        }
+        .mobile-cta-bar a { 
+            flex: 1; 
+            text-align: center; 
+            padding: 14px; 
+            border-radius: 12px; 
+            font-weight: 800; 
+            text-decoration: none; 
+            min-height: 52px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            font-size: 1.1rem;
+        }
+        .mobile-cta-call { background: var(--primary); color: #fff; }
+        .mobile-cta-location { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+        footer { background: var(--dark); color: #fff; padding: 3rem 1rem; margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 2.5rem; max-width: var(--max-width); margin: 0 auto 2rem; }
+        footer h3 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.4rem; }
+        footer a { color: rgba(255,255,255,.85); text-decoration: none; transition: var(--transition); }
+        footer a:hover { color: var(--primary); }
+        @media (max-width: 768px) { 
+            .blog-grid { grid-template-columns: 1fr; } 
+            .intro { padding: 1.5rem; }
+        }
+    </style>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Блог – Пътна Помощ Костинброд",
+      "url": "https://patna-pomosht-kostinbrod.bg/blog/",
+      "description": "Полезни статии за пътна помощ, безопасност, избор на репатрак, цени и действия при авария.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Транспортер Иван Иванов ЕООД – Пътна Помощ Костинброд",
+        "sameAs": [
+          "https://www.facebook.com/patnapomoshtkostinbrod",
+          "https://g.co/kgs/p32TnaT",
+          "https://www.instagram.com/road_assistance_/",
+          "https://www.tiktok.com/@patnapomoshtkostinbrod"
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Какво да правя при повреда на пътя?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Обезопасете мястото, включете аварийни светлини, поставете триъгълник и извикайте пътна помощ при нужда." }
+        },
+        {
+          "@type": "Question",
+          "name": "Кога да извикам репатрак?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Когато автомобилът не може да се движи безопасно или има риск от по-големи щети." }
+        },
+        {
+          "@type": "Question",
+          "name": "Колко струва пътна помощ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Цената зависи от разстоянието, теглото на автомобила и вида повреда. Вижте подробния ни ценоразпис или използвайте калкулатора." }
+        },
+        {
+          "@type": "Question",
+          "name": "Как да изпратя локацията си бързо?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Използвайте бутона „Изпрати локация“ на сайта или изпратете координатите чрез SMS." }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Пътна Помощ Костинброд 🚀</h1>
+            <a href="tel:+359877845569" class="header-cta">
+                <i class="fas fa-phone-alt"></i> Обади се сега!
+            </a>
+        </div>
+    </header>
+    <main class="container">
+        <div class="intro">
+            <h1>Блогът ни – полезно и забавно! 📝✨</h1>
+            <p>Тук ще намерите супер практични статии за безопасност на пътя, избор на репатрак, прозрачни цени и какво да правите при повреда или катастрофа. Всичко написано от опитен екип с над 6 години практика – без скучни лекции, само реални съвети! 😎</p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="https://patna-pomosht-kostinbrod.bg/images/memi23.jpg" loading="lazy" alt="Катастрофа на пътя – какво да правим стъпка по стъпка">
+                <div class="blog-card-body">
+                    <h3>🚨 Какво да правите след катастрофа</h3>
+                    <p>Стъпка по стъпка ръководство за спокойни и правилни действия при ПТП – безопасност, снимки, документи и кога да извикате помощ.</p>
+                    <a href="what-to-do-after-a-car-accident.html">Прочети статията →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://patna-pomosht-kostinbrod.bg/images/memi14.jpg" loading="lazy" alt="Автомобил с повреда на пътя – как да реагираме">
+                <div class="blog-card-body">
+                    <h3>🔧 Какво да правите при повреда на пътя</h3>
+                    <p>Прегряване, спукана гума, изтощена батерия или друг проблем – как да реагирате бързо и безопасно.</p>
+                    <a href="what-to-do-if-your-car-breaks-down.html">Прочети статията →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://patna-pomosht-kostinbrod.bg/images/location.jpg" loading="lazy" alt="Бързо изпращане на GPS локация">
+                <div class="blog-card-body">
+                    <h3>📍 Как да изпратите локацията си бързо</h3>
+                    <p>Най-бързият начин да ни насочите към вас – вграден бутон в сайта, без приложения и без грешки.</p>
+                    <a href="how-to-send-your-location-fast.html">Прочети статията →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://patna-pomosht-kostinbrod.bg/images/prices.png" loading="lazy" alt="Подробно обяснение на цените за пътна помощ">
+                <div class="blog-card-body">
+                    <h3>💰 Цени на пътна помощ – подробно обяснение</h3>
+                    <p>Реални тарифи, минимални такси, нощна надценка и примери за изчисление.</p>
+                    <a href="roadside-assistance-prices-explained.html">Прочети статията →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://patna-pomosht-kostinbrod.bg/images/memi20.jpg" loading="lazy" alt="Избор на подходящ репатрак според автомобила">
+                <div class="blog-card-body">
+                    <h3>🚛 Как да изберете правилния репатрак</h3>
+                    <p>Според тегло, вид повреда и разстояние – за да получите най-подходящата техника.</p>
+                    <a href="how-to-choose-a-tow-truck.html">Прочети статията →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://patna-pomosht-kostinbrod.bg/images/kalk.jpg" loading="lazy" alt="Защо прозрачните цени са важни при пътна помощ">
+                <div class="blog-card-body">
+                    <h3>🤝 Защо прозрачните цени са важни</h3>
+                    <p>Защита от измами, доверие и спокойствие – как ясните тарифи правят разликата.</p>
+                    <a href="why-transparent-pricing-matters.html">Прочети статията →</a>
+                </div>
+            </article>
+        </div>
+        <section class="faq-section">
+            <h2>💡 Често задавани въпроси</h2>
+            <details>
+                <summary>Какво да правя при повреда на пътя?</summary>
+                <p>Обезопасете мястото, включете аварийни светлини, поставете триъгълник и извикайте пътна помощ при нужда.</p>
+            </details>
+            <details>
+                <summary>Кога да извикам репатрак?</summary>
+                <p>Когато автомобилът не може да се движи безопасно или има риск от по-големи щети.</p>
+            </details>
+            <details>
+                <summary>Колко струва пътна помощ?</summary>
+                <p>Цената зависи от разстоянието, теглото на автомобила и вида повреда. Вижте подробния ни ценоразпис или използвайте калкулатора.</p>
+            </details>
+            <details>
+                <summary>Как да изпратя локацията си бързо?</summary>
+                <p>Използвайте бутона „Изпрати локация“ на сайта или изпратете координатите чрез SMS.</p>
+            </details>
+        </section>
+    </main>
+    <div class="mobile-cta-bar">
+        <a class="mobile-cta-call" href="tel:+359877845569"><i class="fas fa-phone"></i> ОБАДИ СЕ</a>
+        <a class="mobile-cta-location" href="#" onclick="sendLocation();return false;"><i class="fas fa-map-marker-alt"></i> ИЗПРАТИ ЛОКАЦИЯ</a>
+    </div>
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>Контакти</h3>
+                <p><i class="fas fa-building"></i> "Транспортер Иван Иванов" ЕООД</p>
+                <p><i class="fas fa-map-marker-alt"></i> ул. Бяло море 16, Костинброд 2230</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+359877845569">+359 877 845 569</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:lind_2003@abv.bg">lind_2003@abv.bg</a></p>
+            </div>
+            <div>
+                <h3>Бързи връзки</h3>
+                <p><a href="/">Главна страница</a></p>
+                <p><a href="/kalkulator.html">Калкулатор за цена</a></p>
+                <p><a href="/blog/">Блог</a></p>
+            </div>
+            <div>
+                <h3>Работно време</h3>
+                <p style="font-size:1.4rem;font-weight:700;color:var(--primary)">ДЕНОНОЩНО 24/7</p>
+                <p>Понеделник - Неделя: 00:00 - 23:59</p>
+                <p style="margin-top:1rem;font-weight:600">Удостоверение №42-00048/28.01.2021</p>
+            </div>
+        </div>
+        <div style="text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)">
+            <p style="margin-bottom:1rem;color:white;font-size:1.1rem;">Следвайте ни:</p>
+            <div style="display:flex;gap:25px;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap;">
+                <a href="https://www.facebook.com/patnapomoshtkostinbrod" target="_blank" rel="noopener" aria-label="Facebook" style="color:white;font-size:2.4rem">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://g.co/kgs/p32TnaT" target="_blank" rel="noopener" aria-label="Google Business" style="color:white;font-size:2.4rem">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/road_assistance_/" target="_blank" rel="noopener" aria-label="Instagram" style="color:white;font-size:2.4rem">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@patnapomoshtkostinbrod" target="_blank" rel="noopener" aria-label="TikTok" style="color:white;font-size:2.4rem">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,.7)">© 2021 - 2025 Всички права запазени. "Транспортер Иван Иванов" ЕООД.</p>
+        </div>
+    </footer>
+    <script>
+        function sendLocation() {
+            if (!navigator.geolocation) {
+                alert("Моля позвънете директно на: 0877 845 569");
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+                const message = `Здравейте! Интересувам се от вашите услуги.\n\nМоята локация (за справка):\nhttps://maps.google.com/?q=${lat},${lng}`;
+                const phone = '+359877845569';
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
+                } else {
+                    navigator.clipboard.writeText(message).then(() => {
+                        alert("✅ Локацията е копирана! Изпратете я на: " + phone);
+                    }).catch(() => alert(message));
+                }
+            }, () => alert("Моля позвънете директно на: 0877 845 569"), { enableHighAccuracy: true, timeout: 10000 });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: 
+
+# Препоръчително е да забраните обхождането на някои несъществени елементи,
+# за да запазите Crawl Budget, например:
+# Disallow: /cgi-bin/
+# Disallow: /tmp/
+# Disallow: /admin/ 
+# Disallow: /*?* # Блокира обхождането на страници с параметри (филтри, търсене), ако има такива
+
+Sitemap: https://patna-pomosht-kostinbrod.bg/sitemap.xml

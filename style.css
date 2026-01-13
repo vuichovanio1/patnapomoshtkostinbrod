@@ -126,7 +126,8 @@ header h1 {
   margin-bottom: 20px;
 }
 
-.language-selector button {
+.language-selector button,
+.lang-btn {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -138,7 +139,8 @@ header h1 {
   min-height: 44px;
 }
 
-.language-selector button:hover {
+.language-selector button:hover,
+.lang-btn:hover {
   transform: scale(1.1);
 }
 
@@ -392,6 +394,13 @@ section h2 {
 .price-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+.price-card .price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0.5rem 0;
 }
 
 /* ========== IMPORTANT INFO ========== */

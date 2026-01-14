@@ -245,6 +245,31 @@ nav a:hover {
   background: var(--primary-dark);
 }
 
+/* ========== BREADCRUMB ========== */
+.breadcrumb {
+  padding: 12px 0;
+  background: var(--light);
+  border-radius: var(--radius);
+  margin: 15px 0;
+  font-size: 0.95rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: var(--muted);
+}
+
 /* ========== HERO SECTION ========== */
 .hero {
   background: linear-gradient(135deg, #e6ffe6, #c8e6c9);

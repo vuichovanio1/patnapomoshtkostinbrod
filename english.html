@@ -471,8 +471,10 @@
             gtag('event', action, { event_category: category, event_label: label });
         }
 
-        document.querySelectorAll('a[href^="tel:"], .btn-primary, .header-cta').forEach(el => {
-            el.addEventListener('click', () => trackEvent('cta_click', 'conversion', el.textContent.trim()));
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="tel:"], .btn-primary, .header-cta').forEach(el => {
+                el.addEventListener('click', () => trackEvent('cta_click', 'conversion', el.textContent.trim()));
+            });
         });
     </script>
 
@@ -550,7 +552,7 @@
     }
     </script>
 </head>
-<body>
+<body data-language="en" data-location-name="Kostinbrod area" data-location-prefix="Hello! I need roadside assistance in" data-location-label="My location:" data-location-fallback="Please call directly: +359 877 845 569" data-location-copy="✅ Location copied! Send it to: " data-location-phone="+359877845569">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
    
@@ -852,26 +854,30 @@
 
     <script>
         function sendLocation() {
+            const { locationName = 'Kostinbrod', locationPrefix = 'Hello! I need roadside assistance in', locationLabel = 'My location:', locationFallback = 'Please call directly: +359 877 845 569', locationCopy = '✅ Location copied! Send it to: ', locationPhone = '+359877845569' } = document.body.dataset || {};
+
             if (!navigator.geolocation) {
-                alert("Please call directly: +359 877 845 569");
+                alert(locationFallback);
                 return;
             }
+
             navigator.geolocation.getCurrentPosition(function(pos) {
                 const lat = pos.coords.latitude;
                 const lng = pos.coords.longitude;
-                const message = `Hello! I need roadside assistance in Kostinbrod area.\n\nMy location:\nhttps://maps.google.com/?q=${lat},${lng}`;
-                const phone = '+359877845569';
+                const message = `${locationPrefix} ${locationName}.\n\n${locationLabel}\nhttps://maps.google.com/?q=${lat},${lng}`;
+                const phone = locationPhone;
+
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                     window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
                 } else {
                     navigator.clipboard.writeText(message).then(function() {
-                        alert("✅ Location copied! Send it to: " + phone);
+                        alert(locationCopy + phone);
                     }).catch(function() {
                         alert(message);
                     });
                 }
-            }, function(err) {
-                alert("Please call directly: +359 877 845 569");
+            }, function() {
+                alert(locationFallback);
             }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 });
         }
 

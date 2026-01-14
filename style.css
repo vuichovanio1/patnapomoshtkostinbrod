@@ -19,6 +19,15 @@
   --shadow-lg: 0 12px 40px rgba(255, 122, 0, 0.2);
 }
 
+/* ========== CRITICAL CSS (from index.html) ========== */
+body{margin:0;font-family:'Inter',system-ui;background:#fff5f0;line-height:1.6}
+header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:1rem;position:sticky;top:0;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,. 15)}
+.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.hero{background:linear-gradient(135deg,#e6ffe6,#c8e6c9);border: 3px solid #28a745;border-radius:20px;padding:2rem;margin:2rem auto;text-align:center;max-width:1200px}
+.skip-link{position:absolute;top:-40px;left: 6px;background:var(--primary);color:#fff;padding:8px 12px;border-radius:8px;z-index:10000;text-decoration:none}
+.skip-link:focus{top:6px;outline:3px solid #fff}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
 /* ========== RESET & BASE ========== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -27,7 +36,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', system-ui; 
   background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
   color: var(--text);
   line-height: 1.6;
@@ -68,6 +77,7 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-md);
+  will-change: transform;
 }
 
 .header-container {
@@ -77,6 +87,7 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  padding: 0 1rem;
 }
 
 header h1 {
@@ -98,6 +109,7 @@ header h1 {
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
   min-height: 44px;
+  will-change: transform;
 }
 
 .header-cta:hover, .header-cta:focus {
@@ -242,6 +254,8 @@ nav a:hover {
   margin: 2rem 0;
   text-align: center;
   box-shadow: var(--shadow-md);
+  max-width: 1200px;
+  margin: 2rem auto;
 }
 
 .hero h2 {
@@ -271,6 +285,34 @@ nav a:hover {
   position: relative;
   overflow: hidden;
   min-height: 48px;
+  will-change: transform;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover::before,
+.btn-primary:focus::before {
+  left: 100%;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:focus {
+  outline: 3px solid var(--primary-dark);
+  outline-offset: 3px;
 }
 
 .btn-primary::before {
@@ -466,6 +508,35 @@ section h2 {
 .review-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
+}
+
+/* ========== PRICES INFO ========== */
+.prices-info {
+  background: linear-gradient(135deg, #fff3e6, #fff0de);
+  border-left: 6px solid var(--primary-dark);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin: 2rem 0;
+}
+
+/* ========== FINAL CTA ========== */
+.final-cta {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 20px;
+  margin: 2rem 0;
+}
+
+.final-cta h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.final-cta .btn-primary {
+  background: white;
+  color: var(--primary);
 }
 
 /* ========== STICKY CTA ========== */

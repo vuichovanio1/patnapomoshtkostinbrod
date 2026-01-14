@@ -1,0 +1,118 @@
+{
+  "name": "????? ????? ?????????? 24/7",
+  "short_name": "????? ?????",
+  "description": "????????? ????? ????? ? ???????? ?????? ? ??????????, ????????, ???????? ? ???????",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#FF7A00",
+  "background_color": "#FFFFFF",
+  "screenshots": [
+    {
+      "src": "/images/screenshot-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/screenshot-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["automotive", "business"],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-540x720.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "????? ????? ??????"
+    },
+    {
+      "src": "/images/screenshot-1280x720.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "?????????? ?? ????"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "?????????? ?? ????",
+      "short_name": "??????????",
+      "description": "????????? ?????? ?? ????? ?????",
+      "url": "/kalkulator.html?source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/images/shortcut-calculator-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "????????? ????",
+      "short_name": "??????? ??",
+      "description": "????????? ?? 0877 845 569",
+      "url": "tel:+359877845569",
+      "icons": [
+        {
+          "src": "/images/shortcut-phone-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "??????? ???????",
+      "short_name": "???????",
+      "description": "??????? ?????? ???????",
+      "url": "/?send_location=true",
+      "icons": [
+        {
+          "src": "/images/shortcut-location-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "prefer_related_applications": false,
+  "related_applications": []
+}

@@ -1,0 +1,271 @@
+/* =============================================
+   CUSTOM.CSS - ???????? INLINE STYLES
+   ============================================= */
+
+/* ============= HERO SECTION ============= */
+.hero-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-trust {
+  margin-top: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.rating-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.rating-badge {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* ============= BUTTONS ============= */
+.btn-calculator {
+  background: linear-gradient(135deg, #0b84ff, #084caa);
+}
+
+.btn-location {
+  background: linear-gradient(135deg, #28a745, #218838);
+}
+
+.btn-location-sticky {
+  background: linear-gradient(135deg, #28a745, #218838);
+}
+
+.btn-calculator-large {
+  background: linear-gradient(135deg, #0b84ff, #084caa);
+  margin: 0 auto;
+  display: table;
+}
+
+.btn-calculator-gradient {
+  background: linear-gradient(135deg, var(--primary), #FF9E2C);
+  padding: 14px 28px;
+}
+
+/* ============= SECTION SUBTITLES & TEXT ============= */
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.kalk-subtitle {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+/* ============= SERVICE ICONS ============= */
+.service-icon-primary {
+  color: var(--primary);
+  margin-right: 10px;
+}
+
+.service-icon-secondary {
+  color: var(--secondary);
+  margin-right: 10px;
+}
+
+.service-icon-yellow {
+  color: #FFD23F;
+  margin-right: 10px;
+}
+
+.service-icon-info {
+  color: #17a2b8;
+  margin-right: 10px;
+}
+
+.service-icon-purple {
+  color: #6f42c1;
+  margin-right: 10px;
+}
+
+.service-icon-danger {
+  color: #dc3545;
+  margin-right: 10px;
+}
+
+.service-icon-success {
+  color: #28a745;
+  margin-right: 10px;
+}
+
+.service-icon-warning {
+  color: #ffc107;
+  margin-right: 10px;
+}
+
+.service-icon-blue {
+  color: #0b84ff;
+  margin-right: 10px;
+}
+
+/* ============= PRICES SECTION ============= */
+.prices-note {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+.price-minimum {
+  color: #666;
+  margin: 0.5rem 0 0;
+}
+
+.prices-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ============= REVIEWS SECTION ============= */
+.reviews-title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-badge {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 2px solid #DB4437;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  margin: 0 auto 2rem;
+  justify-content: center;
+}
+
+.reviews-badge i {
+  color: #DB4437;
+  font-size: 1.5rem;
+}
+
+.reviews-badge strong {
+  color: #DB4437;
+  font-size: 1.3rem;
+}
+
+.reviews-badge span {
+  color: var(--muted);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.review-header {
+  margin-bottom: 0.5rem;
+}
+
+.review-header strong {
+  font-size: 1.1rem;
+}
+
+.review-rating {
+  color: #FFD700;
+  font-size: 1.2rem;
+  margin: 0.25rem 0;
+}
+
+.review-body {
+  color: var(--muted);
+  margin: 0;
+}
+
+.reviews-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ============= FAQ SECTION ============= */
+.faq-item {
+  margin: 0 0 1rem 0;
+}
+
+.faq-item p {
+  margin-top: 0.5rem;
+}
+
+/* ============= FOOTER ============= */
+.footer-hours {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.footer-certificate {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.footer-social {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-title {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============= PARTNER LINKS ============= */
+.partner-link {
+  transition: opacity 0.3s ease;
+}
+
+.partner-link:hover {
+  opacity: 0.8;
+}

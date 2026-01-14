@@ -4,16 +4,18 @@
  */
 
 // ============= LANGUAGE SWITCHER =============
+const currentPath = window.location.pathname.toLowerCase();
+const pages = {
+  'bg': currentPath.includes('kalotina') ? '/kalotina.html' : (currentPath.includes('petrohan') ? '/petrohan.html' : (currentPath.includes('dragoman') ? '/dragoman.html' : (currentPath.includes('magistralaevropa') ? '/magistralaevropa.html' : (currentPath.includes('ginci') ? '/ginci.html' : (currentPath.includes('voluiak') ? '/voluiak.html' : (currentPath.includes('slivnica') ? '/slivnica.html' : (currentPath.includes('kostinbrod') ? '/kostinbrod.html' : '/'))))),
+  'en': '/english.html',
+  'de': '/german.html',
+  'tr': '/turk.html',
+  'ro': '/rom.html'
+};
+
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     const lang = this.getAttribute('data-lang');
-    const pages = {
-      'bg': '/',
-      'en': '/english.html',
-      'de': '/german.html',
-      'tr': '/turk.html',
-      'ro': '/rom.html'
-    };
     if (pages[lang]) {
       window.location.href = pages[lang];
     }
@@ -22,11 +24,14 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 
 // ============= SEND LOCATION FUNCTION =============
 /**
- * ??????? ???????????????? ?? ??????????? ???? SMS ??? ?????? ? ????? ??????
+ * Функция за изпращане на координати чрез SMS или копиране в клипборда
  */
 function sendLocation() {
+  const fallbackMessage = "Моля позвънете директно на: 0877 845 569";
+  const locationName = document.body?.dataset?.location || 'Костинброд';
+
   if (!navigator.geolocation) {
-    alert("???? ????????? ???????? ??: 0877 845 569");
+    alert(fallbackMessage);
     return;
   }
 
@@ -34,23 +39,23 @@ function sendLocation() {
     function(pos) {
       const lat = pos.coords.latitude;
       const lng = pos.coords.longitude;
-      const message = `?????????! ?????? ?? ?? ????? ?????.\n\n????? ???????:\nhttps://maps.google.com/?q=${lat},${lng}`;
+      const message = `Здравейте! Нуждая се от пътна помощ в ${locationName}.\n\nМоята локация:\nhttps://maps.google.com/?q=${lat},${lng}`;
       const phone = '+359877845569';
-      
+
       // Detect mobile
       if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
         window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
       } else {
         // Desktop - copy to clipboard
         navigator.clipboard.writeText(message).then(() => {
-          alert("? ????????? ? ????????! ????????? ? ??: " + phone);
+          alert("✅ Локацията е копирана! Изпратете я на: " + phone);
         }).catch(() => {
           alert(message);
         });
       }
     },
     function() {
-      alert("???? ????????? ???????? ??: 0877 845 569");
+      alert(fallbackMessage);
     },
     {
       enableHighAccuracy: true,

@@ -969,6 +969,10 @@ body.kalkulator-page header p {
   color: #000000;
 }
 
+.kalkulator-page section.container > article > header p {
+  color: #000000;
+}
+
 /* ========== PARTNERS ========== */
 .partners-grid {
   list-style: none;

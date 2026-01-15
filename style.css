@@ -964,6 +964,11 @@ body.kalkulator-page header p {
   }
 }
 
+/* ========== KALKULATOR SEO SECTION TITLE ========== */
+.kalkulator-page section.container > article > header h2 {
+  color: #000000;
+}
+
 /* ========== PARTNERS ========== */
 .partners-grid {
   list-style: none;

@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow: /CITY_PAGE_TEMPLATE.html
 
 # Препоръчително е да забраните обхождането на някои несъществени елементи,
 # за да запазите Crawl Budget, например:

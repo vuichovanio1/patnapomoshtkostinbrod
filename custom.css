@@ -238,6 +238,15 @@
   margin: 0;
 }
 
+/* Review date styling */
+.review-date {
+  display: block;
+  margin-top: 8px;
+  color: #666;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
 .reviews-cta {
   text-align: center;
   margin-top: 2rem;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bg" itemscope itemtype="https://schema.org/Article">
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -147,6 +147,33 @@
       ]
     }
     </script>
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Начало",
+          "item": "https://patna-pomosht-kostinbrod.bg/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://patna-pomosht-kostinbrod.bg/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Защо прозрачните цени са важни",
+          "item": "https://patna-pomosht-kostinbrod.bg/blog/why-transparent-pricing-matters.html"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -238,6 +265,18 @@
                 <summary>Защо някои фирми крият цени?</summary>
                 <p>За да начислят повече на място, когато клиентът е в уязвима позиция и няма избор.</p>
             </details>
+        </section>
+
+        <section class="blog-cta-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin: 40px 0; text-align: center;">
+            <h3 style="color: white; margin-bottom: 15px;">🚨 Нуждаете се от пътна помощ СЕГА?</h3>
+            <p style="margin-bottom: 20px; font-size: 1.1em;">Обслужваме всички региони 24/7 с бърза реакция!</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                <a href="/" style="background: white; color: #667eea; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s;">Костинброд</a>
+                <a href="/kalotina.html" style="background: white; color: #667eea; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s;">Калотина</a>
+                <a href="/slivnica.html" style="background: white; color: #667eea; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s;">Сливница</a>
+                <a href="/dragoman.html" style="background: white; color: #667eea; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s;">Драгоман</a>
+            </div>
+            <a href="tel:+359877845569" style="display: inline-block; background: #FF6B6B; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2em; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;">📞 0877 845 569 - ОБАДИ СЕ СЕГА!</a>
         </section>
 
         <section class="related-links">

@@ -2,9 +2,8 @@
 <html lang="tr" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com">
 
     <!-- SEO & Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -42,31 +41,25 @@
     <meta name="twitter:image:alt" content="Çekici Kostinbrod">
 
     <!-- Hreflang -->
-    <link rel="alternate" hreflang="bg" href="https://patna-pomosht-kostinbrod.bg/">
-    <link rel="alternate" hreflang="en" href="https://patna-pomosht-kostinbrod.bg/english.html">
-    <link rel="alternate" hreflang="de" href="https://patna-pomosht-kostinbrod.bg/german.html">
-    <link rel="alternate" hreflang="tr" href="https://patna-pomosht-kostinbrod.bg/turk.html">
-    <link rel="alternate" hreflang="ro" href="https://patna-pomosht-kostinbrod.bg/rom.html">
-    <link rel="alternate" hreflang="x-default" href="https://patna-pomosht-kostinbrod.bg/">
+    <link rel="alternate" hreflang="bg" href="https://patna-pomosht-kostinbrod.bg/" />
+    <link rel="alternate" hreflang="en" href="https://patna-pomosht-kostinbrod.bg/english.html" />
+    <link rel="alternate" hreflang="de" href="https://patna-pomosht-kostinbrod.bg/german.html" />
+    <link rel="alternate" hreflang="tr" href="https://patna-pomosht-kostinbrod.bg/turk.html" />
+    <link rel="alternate" hreflang="ro" href="https://patna-pomosht-kostinbrod.bg/rom.html" />
+    <link rel="alternate" hreflang="x-default" href="https://patna-pomosht-kostinbrod.bg/" />
 
     <!-- Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="/images/memi2.jpg" as="image">
-    <link rel="preload" href="style.css" as="style">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="custom.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN9QE79LPZ"></script>
     <script>
@@ -76,6 +69,14 @@
         gtag('config', 'G-WN9QE79LPZ', {
             anonymize_ip: true,
             cookie_flags: 'SameSite=None; Secure'
+        });
+
+        function trackEvent(action, category = 'engagement', label = '') {
+            gtag('event', action, { event_category: category, event_label: label });
+        }
+
+        document.querySelectorAll('a[href^="tel:"], .btn-primary, .header-cta').forEach(el => {
+            el.addEventListener('click', () => trackEvent('cta_click', 'conversion', el.textContent.trim()));
         });
     </script>
 
@@ -153,39 +154,32 @@
     }
     </script>
 </head>
-<body data-location="Kostinbrod">
+<body>
     <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+
+    
 
     <header>
         <div class="header-container">
             <h1>24/7 Yol Yardım Kostinbrod</h1>
-            <a href="tel:+359877845569" class="header-cta" aria-label="+359 877 845 569 numarasını ara">
-                <i class="fas fa-phone-alt" aria-hidden="true"></i> Hemen Ara!
+            <a href="tel:+359877845569" class="header-cta">
+                <i class="fas fa-phone-alt"></i> Hemen Ara!
             </a>
         </div>
     </header>
 
-    <div class="language-selector" role="navigation" aria-label="Dil seçimi">
-        <button data-lang="bg" class="lang-btn" title="Български" aria-label="Български">
-            <img src="images/Bulgaria.png" alt="" aria-hidden="true" width="36" height="36" loading="lazy">
-        </button>
-        <button data-lang="en" class="lang-btn" title="English" aria-label="English">
-            <img src="images/en_flag_icon.png" alt="" aria-hidden="true" width="36" height="36" loading="lazy">
-        </button>
-        <button data-lang="de" class="lang-btn" title="Deutsch" aria-label="Deutsch">
-            <img src="images/de_flag_icon.png" alt="" aria-hidden="true" width="36" height="36" loading="lazy">
-        </button>
-        <button data-lang="tr" class="lang-btn" title="Türkçe" aria-label="Türkçe">
-            <img src="images/tr_flag_icon.png" alt="" aria-hidden="true" width="36" height="36" loading="lazy">
-        </button>
-        <button data-lang="ro" class="lang-btn" title="Română" aria-label="Română">
-            <img src="images/ro_flag_icon.png" alt="" aria-hidden="true" width="36" height="36" loading="lazy">
-        </button>
+    <div class="language-selector">
+        <button onclick="changeLanguage('bg')" title="Български"><img src="images/Bulgaria.png" alt="Bulgarca" width="36" height="36"></button>
+        <button onclick="changeLanguage('en')" title="English"><img src="images/en_flag_icon.png" alt="İngilizce" width="36" height="36"></button>
+        <button onclick="changeLanguage('de')" title="Deutsch"><img src="images/de_flag_icon.png" alt="Almanca" width="36" height="36"></button>
+        <button onclick="changeLanguage('tr')" title="Türkçe"><img src="images/tr_flag_icon.png" alt="Türkçe" width="36" height="36"></button>
+        <button onclick="changeLanguage('ro')" title="Română"><img src="images/ro_flag_icon.png" alt="Rumence" width="36" height="36"></button>
     </div>
 
     <div class="dropdown container">
-        <button class="dropbtn">HİZMET BÖLGELERİ <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <button class="dropbtn">HİZMET BÖLGELERİ <i class="fas fa-chevron-down"></i></button>
         <div class="dropdown-content">
+            <a href="kostinbrod.html">Kostinbrod</a>
             <a href="kalotina.html">Kalotina</a>
             <a href="slivnica.html">Slivnitsa</a>
             <a href="petrohan.html">Petrohan</a>
@@ -197,90 +191,91 @@
         </div>
     </div>
 
-    <nav class="container" aria-label="Ana gezinme">
+    <nav class="container">
         <ul>
-            <li><a href="#kalk"><i class="fas fa-calculator" aria-hidden="true"></i> Hesaplayıcı</a></li>
-            <li><a href="#services"><i class="fas fa-tools" aria-hidden="true"></i> Hizmetler</a></li>
-            <li><a href="#prices"><i class="fas fa-tag" aria-hidden="true"></i> Fiyatlar</a></li>
-            <li><a href="#areas"><i class="fas fa-map" aria-hidden="true"></i> Bölgeler</a></li>
-            <li><a href="#why-us"><i class="fas fa-star" aria-hidden="true"></i> Neden Biz</a></li>
-            <li><a href="#reviews"><i class="fas fa-comments" aria-hidden="true"></i> Yorumlar</a></li>
+            <li><a href="#kalk"><i class="fas fa-calculator"></i> Hesaplayıcı</a></li>
+            <li><a href="#services"><i class="fas fa-tools"></i> Hizmetler</a></li>
+            <li><a href="#prices"><i class="fas fa-tag"></i> Fiyatlar</a></li>
+            <li><a href="#areas"><i class="fas fa-map"></i> Bölgeler</a></li>
+            <li><a href="#why-us"><i class="fas fa-star"></i> Neden Biz</a></li>
+            <li><a href="#reviews"><i class="fas fa-comments"></i> Yorumlar</a></li>
         </ul>
     </nav>
 
     <main id="main-content" class="container">
         <section class="hero">
             <h2>Yol yardıma mı ihtiyacınız var?</h2>
-            <p class="hero-text">7/24 buradayız! Bölgedeki tek <strong>ŞEFFAF FİYAT</strong> veren yol yardım hizmeti – aramadan önce fiyatı bilin!</p>
-            <p class="hero-subtitle">Kostinbrod, Slivnitsa, Kalotina, Dragoman, Petrohan ve E80 otoyolunda 7/24 yol yardım ve çekici hizmeti. Benzersiz hesaplayıcımızla anında teklif alın veya konumunuzu tek tıkla gönderin. 6 yolcuya kadar taşıma!</p>
-            <div class="hero-buttons">
-                <a href="tel:+359877845569" class="btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> HEMEN ARA</a>
-                <a href="kalkulator.html" class="btn-primary btn-calculator"><i class="fas fa-calculator" aria-hidden="true"></i> FİYAT HESAPLA</a>
-                <button class="btn-primary btn-location" onclick="sendLocation()"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KONUM GÖNDER</button>
+            <p style="font-size:1.1rem;margin-bottom:1rem">7/24 buradayız! Bölgedeki tek <strong>ŞEFFAF FİYAT</strong> veren yol yardım hizmeti – aramadan önce fiyatı bilin!</p>
+            <p style="font-weight:700;margin-bottom:1.5rem">Kostinbrod, Slivnitsa, Kalotina, Dragoman, Petrohan ve E80 otoyolunda 7/24 yol yardım ve çekici hizmeti. Benzersiz hesaplayıcımızla anında teklif alın veya konumunuzu tek tıkla gönderin. 6 yolcuya kadar taşıma!</p>
+           
+            <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+                <a href="tel:+359877845569" class="btn-primary"><i class="fas fa-phone"></i> HEMEN ARA</a>
+                <a href="kalkulator.html" class="btn-primary" style="background:linear-gradient(135deg,#0b84ff,#084caa)"><i class="fas fa-calculator"></i> FİYAT HESAPLA</a>
+                <button class="btn-primary" onclick="sendLocation()" style="background:linear-gradient(135deg,#28a745,#218838)"><i class="fas fa-map-marker-alt"></i> KONUM GÖNDER</button>
             </div>
-            <p class="hero-trust">5 yıldızlı hizmetimize güvenin!</p>
-            <div class="rating-badges">
-                <span class="rating-badge">
+            <p style="margin-top:1.5rem;font-weight:700;color:var(--primary)">5 yıldızlı hizmetimize güvenin!</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:0.5rem">
+                <span style="background:white;padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04)">
                     <strong style="color:#DB4437">⭐ 5.0</strong> Google – <strong>75 yorum</strong>
                 </span>
-                <span class="rating-badge">
+                <span style="background:white;padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04)">
                     <strong style="color:#2d4373">⭐ 5.0</strong> Trustindex – <strong>89 yorum</strong>
                 </span>
             </div>
         </section>
 
         <section>
-            <h2><i class="fas fa-images" aria-hidden="true"></i> Araç Parkımız ve Ekipmanlarımız</h2>
-            <p class="section-subtitle">Her araç tipi için profesyonel ekipman ve deneyimli ekip</p>
+            <h2><i class="fas fa-images"></i> Araç Parkımız ve Ekipmanlarımız</h2>
+            <p style="text-align:center;color:var(--muted);margin-bottom:1rem">Her araç tipi için profesyonel ekipman ve deneyimli ekip</p>
             <div class="image-gallery">
-                <img src="images/memi1.jpg" alt="Yol yardım Kostinbrod – araç çekme işlemi" loading="lazy" decoding="async" fetchpriority="high">
-                <img src="images/memi2.jpg" alt="Yol yardım Kostinbrod – araç platforma yüklendi" loading="lazy" decoding="async">
-                <img src="images/memi3.jpg" alt="Kostinbrod bölgesinde sıkışmış aracın kurtarılması" loading="lazy" decoding="async">
-                <img src="images/memi4.jpg" alt="Slivnitsa ve çevresinde arızalı minibüs taşıma" loading="lazy" decoding="async">
-                <img src="images/memi5.jpg" alt="E80 otoyolunda SUV çekme – Kostinbrod ekibi" loading="lazy" decoding="async">
-                <img src="images/memi8.jpg" alt="Kostinbrod’da yerinde hızlı lastik değişimi" loading="lazy" decoding="async">
+                <img src="images/memi1.jpg" alt="Yol yardım Kostinbrod – araç çekme işlemi" loading="lazy">
+                <img src="images/memi2.jpg" alt="Yol yardım Kostinbrod – araç platforma yüklendi" loading="lazy">
+                <img src="images/memi3.jpg" alt="Kostinbrod bölgesinde sıkışmış aracın kurtarılması" loading="lazy">
+                <img src="images/memi4.jpg" alt="Slivnitsa ve çevresinde arızalı minibüs taşıma" loading="lazy">
+                <img src="images/memi5.jpg" alt="E80 otoyolunda SUV çekme – Kostinbrod ekibi" loading="lazy">
+                <img src="images/memi8.jpg" alt="Kostinbrod’da yerinde hızlı lastik değişimi" loading="lazy">
             </div>
         </section>
 
         <section id="kalk">
-            <h2><i class="fas fa-calculator" aria-hidden="true"></i> SADECE BİZDE: Fiyat Hesaplayıcı!</h2>
-            <p class="kalk-subtitle">Hareket etmeden önce tam fiyatı bilin! Gizli ücret yok, sürpriz yok!</p>
-            <a href="kalkulator.html" target="_blank" class="btn-primary btn-calculator-large">
-                <i class="fas fa-dollar-sign" aria-hidden="true"></i> ŞİMDİ FİYATINIZI HESAPLAYIN!
+            <h2><i class="fas fa-calculator"></i> SADECE BİZDE: Fiyat Hesaplayıcı!</h2>
+            <p style="text-align:center;font-size:1.1em;margin-bottom:1.5em">Hareket etmeden önce tam fiyatı bilin! Gizli ücret yok, sürpriz yok!</p>
+            <a href="kalkulator.html" target="_blank" class="btn-primary" style="background:linear-gradient(135deg,#0b84ff,#084caa);margin:0 auto;display:table">
+                <i class="fas fa-dollar-sign"></i> ŞİMDİ FİYATINIZI HESAPLAYIN!
             </a>
         </section>
 
         <section id="services">
-            <h2><i class="fas fa-concierge-bell" aria-hidden="true"></i> Hizmetlerimiz</h2>
+            <h2><i class="fas fa-concierge-bell"></i> Hizmetlerimiz</h2>
             <ul class="service-list">
-                <li><i class="fas fa-car-crash service-icon-primary" aria-hidden="true"></i><strong>7/24 yol yardım</strong> – binek araç, scooter, motosiklet, SUV ve minibüs</li>
-                <li><i class="fas fa-truck-ramp-box service-icon-secondary" aria-hidden="true"></i><strong>Araç taşıma</strong> ülke geneli – otomobil, motosiklet, ATV, SUV</li>
-                <li><i class="fas fa-trailer service-icon-yellow" aria-hidden="true"></i><strong>Karavan çekme</strong>, tekne römorku ve römorklar (2700 kg’a kadar)</li>
-                <li><i class="fas fa-gas-pump service-icon-info" aria-hidden="true"></i><strong>Yakıt getirme</strong> – depo boşaldığında</li>
-                <li><i class="fas fa-tire service-icon-purple" aria-hidden="true"></i><strong>Lastik değişimi</strong> hızlı ve profesyonel</li>
-                <li><i class="fas fa-users service-icon-danger" aria-hidden="true"></i><strong>6 YOLCU KOLTUĞU</strong> – tüm aile birlikte seyahat eder!</li>
+                <li><i class="fas fa-car-crash" style="color:var(--primary);margin-right:10px"></i><strong>7/24 yol yardım</strong> – binek araç, scooter, motosiklet, SUV ve minibüs</li>
+                <li><i class="fas fa-truck-ramp-box" style="color:var(--secondary);margin-right:10px"></i><strong>Araç taşıma</strong> ülke geneli – otomobil, motosiklet, ATV, SUV</li>
+                <li><i class="fas fa-trailer" style="color:#FFD23F;margin-right:10px"></i><strong>Karavan çekme</strong>, tekne römorku ve römorklar (2700 kg’a kadar)</li>
+                <li><i class="fas fa-gas-pump" style="color:#17a2b8;margin-right:10px"></i><strong>Yakıt getirme</strong> – depo boşaldığında</li>
+                <li><i class="fas fa-tire" style="color:#6f42c1;margin-right:10px"></i><strong>Lastik değişimi</strong> hızlı ve profesyonel</li>
+                <li><i class="fas fa-users" style="color:#dc3545;margin-right:10px"></i><strong>6 YOLCU KOLTUĞU</strong> – tüm aile birlikte seyahat eder!</li>
             </ul>
         </section>
 
         <section id="prices">
-            <h2><i class="fas fa-money-bill-wave" aria-hidden="true"></i> Hizmet Fiyatları</h2>
-            <p class="prices-note">(Tüm fiyatlar gidiş-dönüş. Tam fiyat için <a href="kalkulator.html" style="color:var(--primary);font-weight:700">hesaplayıcımızı</a> kullanın!)</p>
-
+            <h2><i class="fas fa-money-bill-wave"></i> Hizmet Fiyatları</h2>
+            <p style="text-align:center;font-style:italic;margin-bottom:1.5em">(Tüm fiyatlar gidiş-dönüş. Tam fiyat için <a href="kalkulator.html" style="color:var(--primary);font-weight:700">hesaplayıcımızı</a> kullanın!)</p>
+           
             <div class="prices-grid">
                 <div class="price-card">
-                    <h3><i class="fas fa-car" aria-hidden="true"></i> 1500 kg’a kadar araçlar</h3>
+                    <h3><i class="fas fa-car"></i> 1500 kg’a kadar araçlar</h3>
                     <p class="price">0.75 EUR/km (1.47 BGN/km)</p>
-                    <p class="price-minimum">Minimum: <strong>40 EUR (78.23 BGN)</strong></p>
+                    <p style="color:#666;margin:0.5rem 0 0">Minimum: <strong>40 EUR (78.23 BGN)</strong></p>
                 </div>
                 <div class="price-card">
-                    <h3><i class="fas fa-truck-pickup" aria-hidden="true"></i> 1500-2000 kg araçlar</h3>
+                    <h3><i class="fas fa-truck-pickup"></i> 1500-2000 kg araçlar</h3>
                     <p class="price">0.85 EUR/km (1.66 BGN/km)</p>
-                    <p class="price-minimum">Minimum: <strong>45 EUR (88.01 BGN)</strong></p>
+                    <p style="color:#666;margin:0.5rem 0 0">Minimum: <strong>45 EUR (88.01 BGN)</strong></p>
                 </div>
                 <div class="price-card">
-                    <h3><i class="fas fa-truck" aria-hidden="true"></i> 2000 kg üzeri araçlar</h3>
+                    <h3><i class="fas fa-truck"></i> 2000 kg üzeri araçlar</h3>
                     <p class="price">0.95 EUR/km (1.86 BGN/km)</p>
-                    <p class="price-minimum">Minimum: <strong>50 EUR (97.79 BGN)</strong></p>
+                    <p style="color:#666;margin:0.5rem 0 0">Minimum: <strong>50 EUR (97.79 BGN)</strong></p>
                 </div>
             </div>
             <div class="important-info">
@@ -295,127 +290,130 @@
                     <li>🌊 Çukurdan kurtarma: <strong>75 EUR (146.69 BGN)</strong></li>
                 </ul>
             </div>
-            <div class="prices-cta">
-                <a href="kalkulator.html" class="btn-primary btn-calculator-gradient">
-                    <i class="fas fa-calculator" aria-hidden="true"></i> Fiyatımı hesapla
+            <div style="text-align:center;margin-top:2rem">
+                <a href="kalkulator.html" class="btn-primary" style="background:linear-gradient(135deg,var(--primary),#FF9E2C);padding:14px 28px">
+                    <i class="fas fa-calculator"></i> Fiyatımı hesapla
                 </a>
             </div>
         </section>
 
         <section id="areas">
-            <h2><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Hizmet Bölgeleri</h2>
-            <p class="section-subtitle">Tüm yakın şehir ve köylerde hızlı yol yardım</p>
+            <h2><i class="fas fa-map-marked-alt"></i> Hizmet Bölgeleri</h2>
+            <p style="text-align:center;color:var(--muted);margin-bottom:1.5rem">Tüm yakın şehir ve köylerde hızlı yol yardım</p>
             <div class="area-grid">
-                <a href="slivnica.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Slivnitsa</p></a>
-                <a href="kalotina.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Kalotina</p></a>
-                <a href="bojurishte.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Bozhurishte</p></a>
-                <a href="dragoman.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Dragoman</p></a>
-                <a href="petrohan.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Petrohan</p></a>
-                <a href="ginci.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Gintsi</p></a>
-                <a href="voluiak.html" class="area-card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><p>Voluyak</p></a>
-                <a href="magistralaevropa.html" class="area-card"><i class="fas fa-highway" aria-hidden="true"></i><p>E80 Otoyolu</p></a>
+                <a href="slivnica.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Slivnitsa</p></a>
+                <a href="kalotina.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Kalotina</p></a>
+                <a href="kostinbrod.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Kostinbrod</p></a>
+                <a href="bojurishte.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Bozhurishte</p></a>
+                <a href="dragoman.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Dragoman</p></a>
+                <a href="petrohan.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Petrohan</p></a>
+                <a href="ginci.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Gintsi</p></a>
+                <a href="voluiak.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Voluyak</p></a>
+                <a href="magistralaevropa.html" class="area-card"><i class="fas fa-highway"></i><p>E80 Otoyolu</p></a>
             </div>
         </section>
 
         <section id="why-us">
-            <h2><i class="fas fa-handshake" aria-hidden="true"></i> Neden Bizi Seçmelisiniz?</h2>
+            <h2><i class="fas fa-handshake"></i> Neden Bizi Seçmelisiniz?</h2>
             <ul class="service-list">
-                <li><i class="fas fa-shield-alt service-icon-secondary" aria-hidden="true"></i><strong>Profesyonellik ve güvenilirlik.</strong> Eğitimli ve deneyimli ekipler.</li>
-                <li><i class="fas fa-tachometer-alt service-icon-primary" aria-hidden="true"></i><strong>Hızlı müdahale.</strong> Her çağrıya anında yanıt.</li>
-                <li><i class="fas fa-money-check-alt service-icon-success" aria-hidden="true"></i><strong>Rekabetçi ve şeffaf fiyatlar.</strong> Hesaplayıcı ile net fiyat.</li>
-                <li><i class="fas fa-thumbs-up service-icon-warning" aria-hidden="true"></i><strong>Kanıtlanmış kalite:</strong> Google ve Trustindex yorumlarımıza bakın!</li>
-                <li><i class="fas fa-calculator service-icon-blue" aria-hidden="true"></i><strong>Tek fiyat hesaplayıcı:</strong> Aramadan önce ne kadar ödeyeceğinizi bilin!</li>
-                <li><i class="fas fa-users service-icon-danger" aria-hidden="true"></i><strong>Yolcu taşıma:</strong> 6 kişiye kadar araçla birlikte seyahat!</li>
+                <li><i class="fas fa-shield-alt" style="color:var(--secondary);margin-right:10px"></i><strong>Profesyonellik ve güvenilirlik.</strong> Eğitimli ve deneyimli ekipler.</li>
+                <li><i class="fas fa-tachometer-alt" style="color:var(--primary);margin-right:10px"></i><strong>Hızlı müdahale.</strong> Her çağrıya anında yanıt.</li>
+                <li><i class="fas fa-money-check-alt" style="color:#28a745;margin-right:10px"></i><strong>Rekabetçi ve şeffaf fiyatlar.</strong> Hesaplayıcı ile net fiyat.</li>
+                <li><i class="fas fa-thumbs-up" style="color:#ffc107;margin-right:10px"></i><strong>Kanıtlanmış kalite:</strong> Google ve Trustindex yorumlarımıza bakın!</li>
+                <li><i class="fas fa-calculator" style="color:#0b84ff;margin-right:10px"></i><strong>Tek fiyat hesaplayıcı:</strong> Aramadan önce ne kadar ödeyeceğinizi bilin!</li>
+                <li><i class="fas fa-users" style="color:#dc3545;margin-right:10px"></i><strong>Yolcu taşıma:</strong> 6 kişiye kadar araçla birlikte seyahat!</li>
             </ul>
         </section>
 
         <section id="important-info">
-            <h2><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Önemli Bilgiler</h2>
+            <h2><i class="fas fa-exclamation-triangle"></i> Önemli Bilgiler</h2>
             <ul class="service-list">
-                <li><i class="fas fa-times-circle service-icon-danger" aria-hidden="true"></i>Çeki kancası yoksa: <strong>5 EUR (9.78 BGN)</strong></li>
-                <li><i class="fas fa-tire service-icon-purple" aria-hidden="true"></i>Eksik/bloke tekerlek: <strong>20 EUR (39.12 BGN)</strong> (teker başına)</li>
-                <li><i class="fas fa-clock service-icon-warning" aria-hidden="true"></i>Bizden kaynaklanmayan gecikme: <strong>15 EUR (29.34 BGN)</strong> (saat başına)</li>
-                <li><i class="fas fa-car-crash service-icon-primary" aria-hidden="true"></i>Ağır kaza: <strong>75 EUR (146.69 BGN)</strong></li>
-                <li><i class="fas fa-road service-icon-info" aria-hidden="true"></i>Çukurdan kurtarma: <strong>75 EUR (146.69 BGN)</strong></li>
-                <li><i class="fas fa-moon" style="color:#1a1a2e;margin-right:10px" aria-hidden="true"></i>22:00 – 07:00 arası fiyatlar +30%</li>
-                <li><i class="fas fa-credit-card service-icon-success" aria-hidden="true"></i>POS terminal ile ödeme mümkün</li>
+                <li><i class="fas fa-times-circle" style="color:#dc3545;margin-right:10px"></i>Çeki kancası yoksa: <strong>5 EUR (9.78 BGN)</strong></li>
+                <li><i class="fas fa-tire" style="color:#6f42c1;margin-right:10px"></i>Eksik/bloke tekerlek: <strong>20 EUR (39.12 BGN)</strong> (teker başına)</li>
+                <li><i class="fas fa-clock" style="color:#ff9800;margin-right:10px"></i>Bizden kaynaklanmayan gecikme: <strong>15 EUR (29.34 BGN)</strong> (saat başına)</li>
+                <li><i class="fas fa-car-crash" style="color:#e55a2b;margin-right:10px"></i>Ağır kaza: <strong>75 EUR (146.69 BGN)</strong></li>
+                <li><i class="fas fa-road" style="color:#17a2b8;margin-right:10px"></i>Çukurdan kurtarma: <strong>75 EUR (146.69 BGN)</strong></li>
+                <li><i class="fas fa-moon" style="color:#1a1a2e;margin-right:10px"></i>22:00 – 07:00 arası fiyatlar +30%</li>
+                <li><i class="fas fa-credit-card" style="color:#28a745;margin-right:10px"></i>POS terminal ile ödeme mümkün</li>
             </ul>
         </section>
 
         <section>
-            <h2><i class="fas fa-question-circle" aria-hidden="true"></i> Sık Sorulan Sorular</h2>
+            <h2><i class="fas fa-question-circle"></i> Sık Sorulan Sorular</h2>
             <details class="faq-item">
                 <summary><strong>Tam fiyat nasıl alırım?</strong></summary>
-                <p>Online hesaplayıcımızı kullanın veya konum gönderin – anında teklif alın.</p>
+                <p style="margin-top:0.5rem">Online hesaplayıcımızı kullanın veya konum gönderin – anında teklif alın.</p>
             </details>
             <details class="faq-item">
                 <summary><strong>7/24 çalışıyor musunuz?</strong></summary>
-                <p>Evet – tüm arızalar ve çekici hizmetleri için 7/24 hizmet.</p>
+                <p style="margin-top:0.5rem">Evet – tüm arızalar ve çekici hizmetleri için 7/24 hizmet.</p>
             </details>
             <details class="faq-item">
                 <summary><strong>Kartla (POS) ödeme yapabilir miyim?</strong></summary>
-                <p>Evet – yerinde POS terminal ile ödeme kabul ediyoruz.</p>
+                <p style="margin-top:0.5rem">Evet – yerinde POS terminal ile ödeme kabul ediyoruz.</p>
             </details>
             <details class="faq-item">
                 <summary><strong>Konumumu nasıl gönderirim?</strong></summary>
-                <p>“Konum Gönder” butonuna tıklayın veya hesaplayıcıyı kullanın – koordinatlar otomatik gönderilir.</p>
+                <p style="margin-top:0.5rem">“Konum Gönder” butonuna tıklayın veya hesaplayıcıyı kullanın – koordinatlar otomatik gönderilir.</p>
             </details>
             <details class="faq-item">
                 <summary><strong>Ne kadar sürede gelirsiniz?</strong></summary>
-                <p>Ortalama varış süresi ~30-40 dakika (konum ve trafiğe göre).</p>
+                <p style="margin-top:0.5rem">Ortalama varış süresi ~30-40 dakika (konum ve trafiğe göre).</p>
             </details>
             <details class="faq-item">
                 <summary><strong>Ağır kaza durumunda ne yapmalıyım?</strong></summary>
-                <p>Güvenliği sağlayın, yaralı varsa 112’yi arayın, sonra bizi arayın – çekici ve yerinde yardım için.</p>
+                <p style="margin-top:0.5rem">Güvenliği sağlayın, yaralı varsa 112’yi arayın, sonra bizi arayın – çekici ve yerinde yardım için.</p>
             </details>
             <details class="faq-item">
                 <summary><strong>Kaç yolcu taşıyabilirsiniz?</strong></summary>
-                <p>Araçlarımız arızalı araçla birlikte 6 yolcuya kadar yer sunar.</p>
+                <p style="margin-top:0.5rem">Araçlarımız arızalı araçla birlikte 6 yolcuya kadar yer sunar.</p>
             </details>
             <details class="faq-item">
                 <summary><strong>Gizli ücret var mı?</strong></summary>
-                <p>Hayır. Fiyat şeffaftır ve önceden bildirilir. Hesaplayıcımız tam tutarı gösterir. Onlarca 5 yıldızlı yorumumuz var.</p>
+                <p style="margin-top:0.5rem">Hayır. Fiyat şeffaftır ve önceden bildirilir. Hesaplayıcımız tam tutarı gösterir. Onlarca 5 yıldızlı yorumumuz var.</p>
             </details>
         </section>
 
         <section id="reviews">
-            <h2><i class="fas fa-comments" aria-hidden="true"></i> Memnun Müşterilerimizin Yorumları</h2>
-            <p class="reviews-title">⭐⭐⭐⭐⭐ Google’da <strong>5.0 yıldız</strong> ile gurur duyuyoruz!</p>
-
+            <h2><i class="fas fa-comments"></i> Memnun Müşterilerimizin Yorumları</h2>
+            <p style="text-align:center;font-size:1.2rem;margin-bottom:2rem">⭐⭐⭐⭐⭐ Google’da <strong>5.0 yıldız</strong> ile gurur duyuyoruz!</p>
+           
             <div style="text-align:center;margin-bottom:2rem">
                 <script src="https://static.elfsight.com/platform/platform.js" async></script>
                 <div class="elfsight-app-8ebf32b5-62d9-42eb-a5d2-7e3e6c761f52" data-elfsight-app-lazy></div>
             </div>
             <div style="text-align:center;display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:2rem">
                 <a href="https://search.google.com/local/reviews?placeid=ChIJV6JLRbiVqkARQ1c-OeJ5Xpw" target="_blank" rel="noopener" class="btn-primary" style="background:linear-gradient(135deg,#DB4437,#C1351D);max-width:300px">
-                    <i class="fab fa-google" aria-hidden="true"></i> Google Yorumlarını Gör
+                    <i class="fab fa-google"></i> Google Yorumlarını Gör
                 </a>
                 <a href="https://www.facebook.com/patnapomoshtkostinbrod" target="_blank" rel="noopener" class="btn-primary" style="background:linear-gradient(135deg,#3b5998,#2d4373);max-width:300px">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook Yorumlarını Gör
+                    <i class="fab fa-facebook-f"></i> Facebook Yorumlarını Gör
                 </a>
             </div>
         </section>
 
-        <section class="final-cta">
-            <h2><i class="fas fa-phone-volume" aria-hidden="true"></i> ŞİMDİ Yardıma mı İhtiyacınız Var?</h2>
-            <p>7/24 numaramızı hemen arayın – hızlı gelir, profesyonelce çözeriz.</p>
-            <a href="tel:+359877845569" class="btn-primary"><i class="fas fa-phone-alt" aria-hidden="true"></i> +359 877 845 569</a>
+        <section style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;text-align:center">
+            <h2 style="color:white"><i class="fas fa-phone-volume"></i> ŞİMDİ Yardıma mı İhtiyacınız Var?</h2>
+            <p style="margin-bottom:1.5rem">7/24 numaramızı hemen arayın – hızlı gelir, profesyonelce çözeriz.</p>
+            <a href="tel:+359877845569" class="btn-primary" style="background:white;color:var(--primary);padding:16px 32px;font-size:1.3rem">
+                <i class="fas fa-phone-alt"></i> +359 877 845 569
+            </a>
         </section>
     </main>
 
     <div class="sticky-cta">
-        <a href="tel:+359877845569" aria-label="+359 877 845 569 numarasını ara"><i class="fas fa-phone" aria-hidden="true"></i> ARA</a>
-        <a href="#" class="btn-location-sticky" onclick="sendLocation();return false" aria-label="Konum gönder"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KONUM GÖNDER</a>
+        <a href="tel:+359877845569"><i class="fas fa-phone"></i> ARA</a>
+        <a href="#" onclick="sendLocation();return false"><i class="fas fa-map-marker-alt"></i> KONUM GÖNDER</a>
     </div>
 
     <footer>
         <div class="footer-grid">
             <div>
                 <h3>İletişim</h3>
-                <p><i class="fas fa-building" aria-hidden="true"></i> "Transporter Ivan Ivanov" Ltd</p>
-                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Byalo More 16, Kostinbrod 2230</p>
-                <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+359877845569">+359 877 845 569</a></p>
-                <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:lind_2003@abv.bg">lind_2003@abv.bg</a></p>
+                <p><i class="fas fa-building"></i> "Transporter Ivan Ivanov" Ltd</p>
+                <p><i class="fas fa-map-marker-alt"></i> Byalo More 16, Kostinbrod 2230</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+359877845569">+359 877 845 569</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:lind_2003@abv.bg">lind_2003@abv.bg</a></p>
             </div>
             <div>
                 <h3>Hızlı Linkler</h3>
@@ -427,23 +425,23 @@
             </div>
             <div>
                 <h3>Çalışma Saatleri</h3>
-                <p class="footer-hours">7/24 KESİNTİSİZ</p>
-                <p class="footer-note">Pazartesi - Pazar: 00:00 - 23:59</p>
-                <p class="footer-certificate">Ruhsat №42-00048/28.01.2021</p>
+                <p style="font-size:1.2rem;font-weight:700;color:var(--primary)">7/24 KESİNTİSİZ</p>
+                <p style="margin-top:1rem">Pazartesi - Pazar: 00:00 - 23:59</p>
+                <p style="margin-top:1rem;font-weight:600">Ruhsat №42-00048/28.01.2021</p>
             </div>
         </div>
 
-        <div class="footer-social">
-            <p class="footer-social-title">Bizi takip edin:</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/patnapomoshtkostinbrod" target="_blank" rel="noopener" aria-label="Facebook">
-                    <i class="fab fa-facebook" aria-hidden="true"></i>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center">
+            <p style="margin-bottom:1rem">Bizi takip edin:</p>
+            <div style="display:flex;gap:20px;justify-content:center;margin-bottom:1.5rem">
+                <a href="https://www.facebook.com/patnapomoshtkostinbrod" target="_blank" rel="noopener" style="color:white;font-size:2rem">
+                    <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://g.co/kgs/p32TnaT" target="_blank" rel="noopener" aria-label="Google">
-                    <i class="fab fa-google" aria-hidden="true"></i>
+                <a href="https://g.co/kgs/p32TnaT" target="_blank" rel="noopener" style="color:white;font-size:2rem">
+                    <i class="fab fa-google"></i>
                 </a>
             </div>
-            <p class="footer-copyright">© 2021 - 2025 Tüm hakları saklıdır. "Transporter Ivan Ivanov" Ltd.</p>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.7)">© 2021 - 2025 Tüm hakları saklıdır. "Transporter Ivan Ivanov" Ltd.</p>
         </div>
     </footer>
 
@@ -455,19 +453,53 @@
         </div>
     </div>
 
-    <script defer src="main.js"></script>
     <script>
+        function sendLocation() {
+            if (!navigator.geolocation) {
+                alert("Lütfen doğrudan arayın: +359 877 845 569");
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+                const message = `Merhaba! Kostinbrod civarında yol yardımına ihtiyacım var.\n\nKonumum:\nhttps://maps.google.com/?q=${lat},${lng}`;
+                const phone = '+359877845569';
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
+                } else {
+                    navigator.clipboard.writeText(message).then(function() {
+                        alert("✅ Konum kopyalandı! Gönderin: " + phone);
+                    }).catch(function() {
+                        alert(message);
+                    });
+                }
+            }, function(err) {
+                alert("Lütfen doğrudan arayın: +359 877 845 569");
+            }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 });
+        }
+
+        function changeLanguage(lang) {
+            const pages = {
+                'bg': '/',
+                'en': '/english.html',
+                'de': '/german.html',
+                'tr': '/turk.html',
+                'ro': '/rom.html'
+            };
+            if (pages[lang]) {
+                window.location.href = pages[lang];
+            }
+        }
+
         (function(){
             const banner = document.getElementById('cookie-consent');
             const accepted = localStorage.getItem('cookieConsent');
             if(!accepted) banner.style.display = 'block';
-            const acceptBtn = document.getElementById('cookie-accept');
-            const declineBtn = document.getElementById('cookie-decline');
-            if (acceptBtn) acceptBtn.addEventListener('click', function() {
+            document.getElementById('cookie-accept').addEventListener('click', function() {
                 localStorage.setItem('cookieConsent','yes');
                 banner.style.display='none';
             });
-            if (declineBtn) declineBtn.addEventListener('click', function() {
+            document.getElementById('cookie-decline').addEventListener('click', function() {
                 localStorage.setItem('cookieConsent','no');
                 banner.style.display='none';
             });

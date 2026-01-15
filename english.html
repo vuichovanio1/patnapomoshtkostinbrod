@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
     <title>24/7 Roadside Assistance Kostinbrod – Tow Truck Slivnitsa, Kalotina | Price Calculator</title>
-    <meta name="description" content="24/7 roadside assistance Kostinbrod, Slivnitsa, Kalotina. Online price calculator, fast 30-40 min response. ☎️ +359 877 845 569">
+    <meta name="description" content="⚡ 24/7 roadside assistance & towing in Kostinbrod, Slivnitsa, Kalotina, Dragoman, Petrohan and E80 highway. Unique online price calculator! Fast response 30-40 min, up to 6 passengers – +359 877 845 569">
     <meta name="keywords" content="roadside assistance kostinbrod, tow truck slivnitsa, kalotina towing, dragoman roadside, petrohan, e80, price calculator, 24/7 assistance">
     <meta name="ai-summary" content="24/7 roadside assistance and towing in Kostinbrod, Slivnitsa, Kalotina, Dragoman, Petrohan and E80 highway. Unique online price calculator for transparent pricing. Fast response 24/7, transport up to 6 passengers, POS payment. 5.0⭐ rating on Google and Trustindex.">
     <link rel="canonical" href="https://patna-pomosht-kostinbrod.bg/english.html">
@@ -471,10 +471,8 @@
             gtag('event', action, { event_category: category, event_label: label });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[href^="tel:"], .btn-primary, .header-cta').forEach(el => {
-                el.addEventListener('click', () => trackEvent('cta_click', 'conversion', el.textContent.trim()));
-            });
+        document.querySelectorAll('a[href^="tel:"], .btn-primary, .header-cta').forEach(el => {
+            el.addEventListener('click', () => trackEvent('cta_click', 'conversion', el.textContent.trim()));
         });
     </script>
 
@@ -552,7 +550,7 @@
     }
     </script>
 </head>
-<body data-language="en" data-location-name="Kostinbrod area" data-location-prefix="Hello! I need roadside assistance in" data-location-label="My location:" data-location-fallback="Please call directly: +359 877 845 569" data-location-copy="✅ Location copied! Send it to: " data-location-phone="+359877845569">
+<body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
    
@@ -577,6 +575,7 @@
     <div class="dropdown container">
         <button class="dropbtn">SERVICE AREAS <i class="fas fa-chevron-down"></i></button>
         <div class="dropdown-content">
+            <a href="kostinbrod.html">Kostinbrod</a>
             <a href="kalotina.html">Kalotina</a>
             <a href="slivnica.html">Slivnitsa</a>
             <a href="petrohan.html">Petrohan</a>
@@ -700,6 +699,7 @@
             <div class="area-grid">
                 <a href="slivnica.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Slivnitsa</p></a>
                 <a href="kalotina.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Kalotina</p></a>
+                <a href="kostinbrod.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Kostinbrod</p></a>
                 <a href="bojurishte.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Bozhurishte</p></a>
                 <a href="dragoman.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Dragoman</p></a>
                 <a href="petrohan.html" class="area-card"><i class="fas fa-map-marker-alt"></i><p>Petrohan</p></a>
@@ -852,30 +852,26 @@
 
     <script>
         function sendLocation() {
-            const { locationName = 'Kostinbrod', locationPrefix = 'Hello! I need roadside assistance in', locationLabel = 'My location:', locationFallback = 'Please call directly: +359 877 845 569', locationCopy = '✅ Location copied! Send it to: ', locationPhone = '+359877845569' } = document.body.dataset || {};
-
             if (!navigator.geolocation) {
-                alert(locationFallback);
+                alert("Please call directly: +359 877 845 569");
                 return;
             }
-
             navigator.geolocation.getCurrentPosition(function(pos) {
                 const lat = pos.coords.latitude;
                 const lng = pos.coords.longitude;
-                const message = `${locationPrefix} ${locationName}.\n\n${locationLabel}\nhttps://maps.google.com/?q=${lat},${lng}`;
-                const phone = locationPhone;
-
+                const message = `Hello! I need roadside assistance in Kostinbrod area.\n\nMy location:\nhttps://maps.google.com/?q=${lat},${lng}`;
+                const phone = '+359877845569';
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                     window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`;
                 } else {
                     navigator.clipboard.writeText(message).then(function() {
-                        alert(locationCopy + phone);
+                        alert("✅ Location copied! Send it to: " + phone);
                     }).catch(function() {
                         alert(message);
                     });
                 }
-            }, function() {
-                alert(locationFallback);
+            }, function(err) {
+                alert("Please call directly: +359 877 845 569");
             }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 });
         }
 

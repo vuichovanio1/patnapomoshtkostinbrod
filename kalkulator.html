@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>🚨 Калкулатор Цена Пътна Помощ – Костинброд, Петрохан, Калотина, Сливница, Божурище, Драгоман, Гинци, Волуяк, Е80 24/7 | 0877 845 569</title>
     <meta name="description" content="⚡ Единственият онлайн калкулатор за пътна помощ в Костинброд, Петрохан, Калотина, Сливница, Божурище, Драгоман, Гинци, Волуяк и Е80! Изчислете точната цена за секунди – без скрити такси.">
-    <meta name="ai-summary" content="Онлайн калкулатор за точна цена на пътна помощ в Костинброд, Калотина, Петрохан, Сливница и Е80. Прозрачни тарифи, двупосочен курс, нощна такса и допълнителни услуги в рамките на секунди.">
     <meta name="keywords" content="калкулатор пътна помощ, цена репатрак петрохан, цена пътна помощ калотина, онлайн калкулатор е80, прозрачни цени костинброд, пътна помощ сливница, пътна помощ божурище, пътна помощ драгоман, пътна помощ гинци, пътна помощ волуяк">
     <meta name="author" content="Транспортер Иван Иванов ЕООД">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://patna-pomosht-kostinbrod.bg/kalkulator.html">
-    <link rel="amphtml" href="https://patna-pomosht-kostinbrod.bg/kalkulator.amp.html">
    
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://patna-pomosht-kostinbrod.bg/kalkulator.html">
@@ -24,56 +22,338 @@
     <meta property="og:image:height" content="630">
    
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-    
-    <!-- Critical CSS Inline (only basic layout, no sticky, no animations) -->
-    <style>
-      :root{--primary:#FF7A00;--primary-dark:#E55A2B;--secondary:#28a745;--dark:#1A1A2E;--text:#2d3748;--light:#fff5f0}
-      *{box-sizing:border-box;margin:0;padding:0}
-      body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#fff5f0;color:var(--text);line-height:1.6}
-      header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:1rem}
-      .container{max-width:1200px;margin:auto;padding:0 1rem}
-      footer{background:var(--dark);color:#ffffff;padding:2rem 1rem;margin-top:3rem}
-    </style>
-    
-    <!-- DNS Prefetch & Preconnect -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="js/calculator.js" as="script">
-    
-    <!-- Stylesheets with Defer Load -->
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN9QE79LPZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WN9QE79LPZ', { 'anonymize_ip': true });
-    </script>
- </head>
- <body class="kalkulator-page">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+   
+    <style>
+        :root {
+            --primary: #FF7A00;
+            --primary-dark: #E55A2B;
+            --secondary: #28a745;
+            --dark: #1A1A2E;
+            --text: #2d3748;
+            --muted: #6b7280;
+            --light: #fff5f0;
+            --radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 50px rgba(255,122,0,0.3);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        .language-selector {
+            text-align: center;
+            padding: 1rem 0;
+            background: var(--dark);
+        }
+        .language-selector button {
+            background: transparent;
+            border: 3px solid transparent;
+            cursor: pointer;
+            margin: 0 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .language-selector button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+        .language-selector button.active {
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(255,255,255,0.6);
+            border: 3px solid white;
+        }
+        .language-selector img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+        }
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+        input, select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 5px rgba(255,122,0,0.2);
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            background: var(--light);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .checkbox-group:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: 26px;
+            height: 26px;
+            accent-color: var(--primary);
+        }
+        .checkbox-group label {
+            flex: 1;
+            margin-left: 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .number-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .number-input button {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .number-input button:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .number-input input {
+            width: 60px;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        .calc-btn {
+            width: 100%;
+            padding: 22px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.6rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+            margin: 2rem 0;
+        }
+        .calc-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg), 0 25px 60px rgba(255,122,0,0.4);
+        }
+        .result {
+            margin-top: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+            border: 5px solid var(--secondary);
+            border-radius: 28px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.8s ease-out;
+            box-shadow: var(--shadow-lg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result h3 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .final-price-card {
+            background: linear-gradient(135deg, var(--secondary), #218838);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+        .final-price-card h4 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .final-price-card .price {
+            font-size: 5rem;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+            margin: 1rem 0;
+        }
+        .final-price-card .price-small {
+            font-size: 2.8rem;
+            margin-top: 0.5rem;
+            opacity: 0.95;
+        }
+        .breakdown {
+            margin: 2rem 0;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: left;
+            box-shadow: var(--shadow-md);
+        }
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 1.1rem;
+        }
+        .breakdown-item:last-child {
+            border-bottom: none;
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .breakdown-item:last-child span:first-child {
+            align-self: flex-start;
+            font-size: 1.4rem;
+        }
+        .call-now {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 24px 48px;
+            background: var(--secondary);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 800;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            max-width: 90%;
+        }
+        .call-now:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(40,167,69,0.5);
+        }
+        .sticky-phone {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        .sticky-phone:hover {
+            transform: scale(1.2);
+        }
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+        .back-home {
+            display: inline-block;
+            margin: 1.5rem auto;
+            padding: 16px 36px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .container { margin: 1rem; padding: 1.5rem; }
+            .final-price-card .price { font-size: 4rem; }
+            .final-price-card h4 { font-size: 2rem; }
+            .call-now { font-size: 1.6rem; padding: 20px 40px; }
+            .result h3 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
     <header>
         <h1 id="header-title">Калкулатор за Цена на Пътна Помощ</h1>
         <p id="header-subtitle">Единственият в България – изчислете точната цена за Костинброд, Петрохан, Калотина, Сливница, Божурище, Драгоман, Гинци, Волуяк, Е80 за секунди!</p>
     </header>
     <div class="language-selector">
-        <button onclick="setLanguage('bg')" title="Български"><img src="images/Bulgaria.png" alt="Български език" width="36" height="36" loading="lazy"></button>
-        <button onclick="setLanguage('en')" title="English"><img src="images/en_flag_icon.png" alt="English" width="36" height="36" loading="lazy"></button>
-        <button onclick="setLanguage('de')" title="Deutsch"><img src="images/de_flag_icon.png" alt="Deutsch" width="36" height="36" loading="lazy"></button>
-        <button onclick="setLanguage('tr')" title="Türkçe"><img src="images/tr_flag_icon.png" alt="Türkçe" width="36" height="36" loading="lazy"></button>
-        <button onclick="setLanguage('ro')" title="Română"><img src="images/ro_flag_icon.png" alt="Română" width="36" height="36" loading="lazy"></button>
+        <button onclick="setLanguage('bg')" title="Български"><img src="images/Bulgaria.png" alt="Български език"></button>
+        <button onclick="setLanguage('en')" title="English"><img src="images/en_flag_icon.png" alt="English"></button>
+        <button onclick="setLanguage('de')" title="Deutsch"><img src="images/de_flag_icon.png" alt="Deutsch"></button>
+        <button onclick="setLanguage('tr')" title="Türkçe"><img src="images/tr_flag_icon.png" alt="Türkçe"></button>
+        <button onclick="setLanguage('ro')" title="Română"><img src="images/ro_flag_icon.png" alt="Română"></button>
     </div>
     <div class="container">
         <div class="form-group">
             <label id="label-service" for="serviceType">Тип услуга</label>
-            <select id="serviceType" aria-label="Тип услуга">
+            <select id="serviceType">
                 <option value="towing" selected>Пътна помощ / Репатриране</option>
                 <option value="fuel">Доставка на гориво</option>
                 <option value="tire">Смяна на гума</option>
@@ -81,7 +361,7 @@
         </div>
         <div class="form-group">
             <label id="label-distance" for="distance">Разстояние в ЕДНАТА посока (км)</label>
-            <input type="number" id="distance" inputmode="numeric" min="0" step="0.1" placeholder="Напр. 45" aria-label="Километри" required>
+            <input type="number" id="distance" min="1" step="0.1" placeholder="Напр. 45" required>
         </div>
         <div class="form-group">
             <label id="label-weight" for="weight">Тегло на МПС</label>
@@ -92,7 +372,7 @@
                 <option value="over2000">Над 2000 кг (джип, бус, каравани)</option>
             </select>
         </div>
-        <h3 id="extra-title" style="margin: 2.5rem 0 1.5rem; color: #FF7A00; font-size: 1.6rem; font-weight: 700;">Допълнителни условия</h3>
+        <h3 id="extra-title" style="margin: 2.5rem 0 1.5rem; color: var(--primary); font-size: 1.6rem;">Допълнителни условия</h3>
         <div class="checkbox-group">
             <input type="checkbox" id="noHook">
             <label id="label-noHook" for="noHook">Липса на кука (+5 € / 9.78 лв)</label>
@@ -151,246 +431,12 @@
             <path d="M20.01 15.38c-1.23 0-2.42-.2-3.55-.57a1.16 1.16 0 0 0-1.26.07l-2.3 1.51a15.18 15.18 0 0 1-6.59-6.59l1.51-2.3a1.16 1.16 0 0 0 .07-1.26c-.37-1.13-.57-2.32-.57-3.55C7.31 1.6 6.21.5 5 .5H2.5C1.29.5.5 1.29.5 2.5 .5 15.01 10.99 24.5 23.5 24.5c1.21 0 2-1.79 2-3v-2.5c0-1.21-1.1-2.31-2.49-2.31z"/>
         </svg>
     </a>
-
-    <!-- СЕКЦИЯ С ОБЯСНЕНИЯ КАК РАБОТИ КАЛКУЛАТОРЪТ (СЛЕД КАЛКУЛАТОРА ЗА SEO) -->
-    <section class="container" style="margin: 3rem auto;">
-        <article style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-            <header>
-                <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif;">
-                    <i class="fas fa-info-circle" style="margin-right: 10px;"></i>Как работи онлайн калкулаторът за пътна помощ?
-                </h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #2c3e50; margin-bottom: 2rem; line-height: 1.8; font-weight: 500;">
-                    Нашият интерактивен калкулатор е създаден да Ви предостави <strong style="color: #000;">точна и прозрачна цена</strong> за пътна помощ в <strong style="color: #000;">реално време</strong>. Без скрити такси, без изненади - виждате всичко предварително!
-                </p>
-            </header>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                <div itemscope itemtype="https://schema.org/HowToStep" style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #e67e22; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <meta itemprop="position" content="1">
-                    <h3 itemprop="name" style="color: #e67e22; font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 700;">
-                        <i class="fas fa-edit" style="background: #e67e22; color: white; padding: 8px 12px; border-radius: 50%; margin-right: 8px; font-size: 0.9rem;">1</i>
-                        Въведете данни
-                    </h3>
-                    <p itemprop="text" style="margin: 0; line-height: 1.7; color: #2c3e50; font-weight: 500;">Изберете тип услуга, въведете разстояние в <strong style="color: #000;">ЕДНАТА посока</strong> (km) и теглото на вашия автомобил. Калкулаторът автоматично удвоява километрите за обратния път.</p>
-                </div>
-                <div itemscope itemtype="https://schema.org/HowToStep" style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #28a745; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <meta itemprop="position" content="2">
-                    <h3 itemprop="name" style="color: #28a745; font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 700;">
-                        <i class="fas fa-calculator" style="background: #28a745; color: white; padding: 8px 12px; border-radius: 50%; margin-right: 8px; font-size: 0.9rem;">2</i>
-                        Автоматично изчисление
-                    </h3>
-                    <p itemprop="text" style="margin: 0; line-height: 1.7; color: #2c3e50; font-weight: 500;">Калкулаторът умножава разстоянието по 2 (отиване и връщане) и прилага тарифата според теглото на МПС. Минимални такси: 40€, 45€ или 50€ според категорията.</p>
-                </div>
-                <div itemscope itemtype="https://schema.org/HowToStep" style="padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #17a2b8; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                    <meta itemprop="position" content="3">
-                    <h3 itemprop="name" style="color: #17a2b8; font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 700;">
-                        <i class="fas fa-check-circle" style="background: #17a2b8; color: white; padding: 8px 12px; border-radius: 50%; margin-right: 8px; font-size: 0.9rem;">3</i>
-                        Получете цената
-                    </h3>
-                    <p itemprop="text" style="margin: 0; line-height: 1.7; color: #2c3e50; font-weight: 500;">Виждате крайната цена в <strong style="color: #000;">евро и левове</strong>, плюс детайлна разбивка на всички такси - базова цена, допълнителни услуги и нощна такса (ако е приложимо).</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 2.5rem; padding: 2rem; background: #fff; border-radius: 12px; border: 2px solid #e67e22; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.15);">
-                <h3 style="color: #2c3e50; font-size: 1.4rem; margin-bottom: 1rem; text-align: center; font-weight: 700;">
-                    <i class="fas fa-star" style="margin-right: 8px; color: #FFD700;"></i>Защо нашият калкулатор е уникален?
-                </h3>
-                <ul style="margin: 1rem 0; padding-left: 1.5rem; line-height: 2; list-style: none;">
-                    <li style="margin-bottom: 0.8rem; color: #333;">
-                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
-                        <strong>100% Прозрачност:</strong> Виждате точно за какво плащате - няма скрити такси или допълнителни разходи
-                    </li>
-                    <li style="margin-bottom: 0.8rem; color: #333;">
-                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
-                        <strong>Единствен в региона:</strong> Първият и единствен онлайн калкулатор за пътна помощ в Костинброд, Петрохан, Калотина и околността
-                    </li>
-                    <li style="margin-bottom: 0.8rem; color: #333;">
-                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
-                        <strong>Математическа точност:</strong> Изчисленията отчитат всички допълнителни условия, нощни такси и специфични обстоятелства
-                    </li>
-                    <li style="margin-bottom: 0.8rem; color: #333;">
-                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
-                        <strong>Многоезичен:</strong> Достъпен на 5 езика - Български, English, Deutsch, Türkçe, Română
-                    </li>
-                    <li style="margin-bottom: 0.8rem; color: #333;">
-                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
-                        <strong>Моментални резултати:</strong> Получавате цена в рамките на секунди без да чакате обаждане или оферта
-                    </li>
-                    <li style="color: #333;">
-                        <i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>
-                        <strong>Мобилно оптимизиран:</strong> Работи перфектно на всички устройства - телефон, таблет, компютър
-                    </li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 2.5rem; padding: 2rem; background: #f8f9fa; border-radius: 12px; border-left: 5px solid #e67e22; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                <h3 style="color: #2c3e50; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 700;">
-                    <i class="fas fa-question-circle" style="margin-right: 8px; color: #e67e22;"></i>Често задавани въпроси (FAQ)
-                </h3>
-                <dl style="line-height: 1.9;">
-                    <dt style="font-weight: 700; color: #e67e22; margin-top: 1.5rem; font-size: 1.05rem;">
-                        <i class="fas fa-chevron-right" style="margin-right: 5px;"></i>Защо въвеждам разстояние само в едната посока?
-                    </dt>
-                    <dd style="margin-left: 1.5rem; color: #2c3e50; font-weight: 500; margin-top: 0.5rem;">
-                        За ваше удобство въвеждате само километрите до мястото на повредата. Калкулаторът автоматично удвоява разстоянието, защото нашият репатрак трябва да се върне обратно до базата.
-                    </dd>
-
-                    <dt style="font-weight: 700; color: #e67e22; margin-top: 1.5rem; font-size: 1.05rem;">
-                        <i class="fas fa-chevron-right" style="margin-right: 5px;"></i>Как се определя крайната цена?
-                    </dt>
-                    <dd style="margin-left: 1.5rem; color: #2c3e50; font-weight: 500; margin-top: 0.5rem;">
-                        Крайната цена се формира от: базова цена (разстояние × 2 × тарифа според тегло), минимална такса (ако е приложимо), допълнителни услуги (кука, гуми, забавяне) и нощна такса (+30% между 22:00-07:00).
-                    </dd>
-
-                    <dt style="font-weight: 700; color: #e67e22; margin-top: 1.5rem; font-size: 1.05rem;">
-                        <i class="fas fa-chevron-right" style="margin-right: 5px;"></i>Има ли скрити такси?
-                    </dt>
-                    <dd style="margin-left: 1.5rem; color: #2c3e50; font-weight: 500; margin-top: 0.5rem;">
-                        <strong style="color: #000;">НЕ!</strong> Всичко, което виждате в калкулатора е крайната цена. Няма допълнителни разходи, скрити такси или изненадващи доплащания на място.
-                    </dd>
-
-                    <dt style="font-weight: 700; color: #e67e22; margin-top: 1.5rem; font-size: 1.05rem;">
-                        <i class="fas fa-chevron-right" style="margin-right: 5px;"></i>Какво означава "нощна такса"?
-                    </dt>
-                    <dd style="margin-left: 1.5rem; color: #2c3e50; font-weight: 500; margin-top: 0.5rem;">
-                        В периода между 22:00 вечерта и 07:00 сутринта се прилага надбавка от 30% върху общата цена заради затруднените условия за работа и повишеният риск.
-                    </dd>
-
-                    <dt style="font-weight: 700; color: #e67e22; margin-top: 1.5rem; font-size: 1.05rem;">
-                        <i class="fas fa-chevron-right" style="margin-right: 5px;"></i>Какви допълнителни услуги може да избера?
-                    </dt>
-                    <dd style="margin-left: 1.5rem; color: #2c3e50; font-weight: 500; margin-top: 0.5rem;">
-                        Можете да добавите: липса на кука за теглене (+5€), блокирала/липсваща гума (+20€/брой), забавяне на място (+15€/час), тежка катастрофа (+75€), изваждане от канавка (+75€).
-                    </dd>
-                </dl>
-            </div>
-
-            <div style="margin-top: 2rem; text-align: center; padding: 2rem; background: #fff; border-radius: 12px; border: 2px solid #28a745; box-shadow: 0 4px 15px rgba(40,167,69,0.1);">
-                <p style="font-size: 1.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">
-                    <i class="fas fa-headset" style="color: #e67e22; margin-right: 8px;"></i>
-                    Имате въпроси или нужда от консултация?
-                </p>
-                <a href="tel:+359877845569" style="display: inline-block; background: linear-gradient(135deg, #28a745, #1e7e34); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.1rem; box-shadow: 0 8px 20px rgba(40,167,69,0.3); transition: all 0.3s ease;">
-                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Обади се: 0877 845 569
-                </a>
-            </div>
-        </article>
-    </section>
-
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3><i class="fas fa-phone-volume" style="margin-right: 8px;"></i>Контакти</h3>
-                    <p><i class="fas fa-building" aria-hidden="true"></i> <span id="footer-company">"Транспортер Иван Иванов" ЕООД</span></p>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span id="footer-address">ул. Бяло море 16, Костинброд 2230</span></p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+359877845569">+359 877 845 569</a></p>
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:lind_2003@abv.bg">lind_2003@abv.bg</a></p>
-                    <p><i class="fab fa-facebook-f" aria-hidden="true"></i> <a href="https://www.facebook.com/patnapomoshtkostinbrod" target="_blank" rel="noopener">Facebook страница</a></p>
-                    <p><i class="fab fa-google" aria-hidden="true"></i> <a href="https://g.co/kgs/p32TnaT" target="_blank" rel="noopener">Google Business профил</a></p>
-                </div>
-                <div>
-                    <h3 id="footer-quick-links"><i class="fas fa-link" style="margin-right: 8px;"></i>Бързи връзки</h3>
-                    <p><a href="/" id="back-home"><i class="fas fa-home"></i> Главна страница</a></p>
-                    <p><a href="kalkulator.html"><i class="fas fa-calculator"></i> Калкулатор за цена</a></p>
-                    <p><a href="blog/index.html"><i class="fas fa-blog"></i> Блог</a></p>
-                    <p><a href="kalotina.html"><i class="fas fa-map-signs"></i> Пътна помощ Калотина</a></p>
-                    <p><a href="petrohan.html"><i class="fas fa-mountain"></i> Пътна помощ Петрохан</a></p>
-                    <p><a href="slivnica.html"><i class="fas fa-road"></i> Пътна помощ Сливница</a></p>
-                </div>
-                <div>
-                    <h3 id="footer-hours-title"><i class="fas fa-clock" style="margin-right: 8px;"></i>Работно време</h3>
-                    <p class="footer-hours" id="footer-hours" style="font-size: 1.3rem; font-weight: 800; color: #2ECC71;">
-                        <i class="fas fa-check-circle"></i> ДЕНОНОЩНО 24/7
-                    </p>
-                    <p id="footer-schedule"><i class="fas fa-calendar-alt"></i> Понеделник - Неделя: 00:00 - 23:59</p>
-                    <p class="footer-certificate" id="footer-license" style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,154,60,0.15); border-radius: 8px; border: 1px solid rgba(255,154,60,0.3);">
-                        <i class="fas fa-certificate" style="color: #FF9A3C;"></i> Удостоверение №42-00048/28.01.2021
-                    </p>
-                </div>
-                <div>
-                    <h3><i class="fas fa-map-marked-alt" style="margin-right: 8px;"></i>Покрити региони</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Костинброд
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Петрохан
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Калотина
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Сливница
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Божурище
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Драгоман
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Гинци
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Волуяк
-                        </span>
-                        <span style="background: rgba(255,154,60,0.2); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; color: #f8f9fa; font-weight: 600; border: 1px solid rgba(255,154,60,0.3);">
-                            <i class="fas fa-check" style="color: #2ECC71;"></i> Е80
-                        </span>
-                    </div>
-                    <p style="margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.6; color: #f8f9fa; font-weight: 500;">
-                        <i class="fas fa-info-circle" style="color: #FF9A3C;"></i> 
-                        Обслужваме целия регион на Костинброд и околността денонощно.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- ЦЕНОВА ИНФОРМАЦИЯ В ФУТЪРА -->
-            <div style="margin: 2rem 0; padding: 2rem; background: rgba(255,154,60,0.08); border-radius: 12px; border: 1px solid rgba(255,154,60,0.25);">
-                <h3 style="color: #FF9A3C; text-align: center; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 700;">
-                    <i class="fas fa-euro-sign"></i> Минимални цени - Прозрачни тарифи
-                </h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                    <div style="background: rgba(255,154,60,0.15); padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid rgba(255,154,60,0.3);">
-                        <i class="fas fa-car" style="font-size: 2rem; color: #FF9A3C; margin-bottom: 0.5rem;"></i>
-                        <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: #f8f9fa; font-weight: 700;">До 1500 кг</h4>
-                        <p style="margin: 0.5rem 0; font-size: 1.8rem; font-weight: 800; color: #2ECC71;">40 €</p>
-                        <p style="margin: 0; font-size: 0.9rem; color: #dee2e6; font-weight: 500;">0.75 €/км (двупосочно)</p>
-                    </div>
-                    <div style="background: rgba(255,154,60,0.15); padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid rgba(255,154,60,0.3);">
-                        <i class="fas fa-truck" style="font-size: 2rem; color: #FF9A3C; margin-bottom: 0.5rem;"></i>
-                        <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: #f8f9fa; font-weight: 700;">1500–2000 кг</h4>
-                        <p style="margin: 0.5rem 0; font-size: 1.8rem; font-weight: 800; color: #2ECC71;">45 €</p>
-                        <p style="margin: 0; font-size: 0.9rem; color: #dee2e6; font-weight: 500;">0.85 €/км (двупосочно)</p>
-                    </div>
-                    <div style="background: rgba(255,154,60,0.15); padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid rgba(255,154,60,0.3);">
-                        <i class="fas fa-shuttle-van" style="font-size: 2rem; color: #FF9A3C; margin-bottom: 0.5rem;"></i>
-                        <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: #f8f9fa; font-weight: 700;">Над 2000 кг</h4>
-                        <p style="margin: 0.5rem 0; font-size: 1.8rem; font-weight: 800; color: #2ECC71;">50 €</p>
-                        <p style="margin: 0; font-size: 0.9rem; color: #dee2e6; font-weight: 500;">0.95 €/км (двупосочно)</p>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.95rem; color: #f8f9fa; font-weight: 500;">
-                    <i class="fas fa-moon" style="color: #FFD700;"></i> Нощна такса (22:00-07:00): +30% | 
-                    <i class="fas fa-coins" style="color: #FF9A3C;"></i> Валута: 1€ = 1.95583 лв
-                </p>
-            </div>
-
-            <div class="footer-social">
-                <p class="footer-social-title" id="footer-follow"><i class="fas fa-heart" style="margin-right: 5px; color: #e74c3c;"></i>Следвайте ни:</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/patnapomoshtkostinbrod" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="https://g.co/kgs/p32TnaT" target="_blank" rel="noopener" aria-label="Google Business"><i class="fab fa-google" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/road_assistance_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.tiktok.com/@patnapomoshtkostinbrod" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
-                </div>
-                <p class="footer-copyright" id="footer-copyright">© 2021 - 2025 Всички права запазени. "Транспортер Иван Иванов" ЕООД.</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #dee2e6; font-weight: 500;">
-                    <i class="fas fa-code" style="color: #FF9A3C;"></i> Изработено с <i class="fas fa-heart" style="color: #e74c3c;"></i> за максимална прозрачност и удобство
-                </p>
-            </div>
-        </div>
+        <a href="/" class="back-home" id="back-home">← Начална страница</a>
+        <p><strong id="footer-company">Транспортер Иван Иванов ЕООД</strong></p>
+        <p id="footer-address">ул. Бяло море 16, Костинброд 2230</p>
+        <p id="footer-license">Удостоверение №42-00048/28.01.2021</p>
+        <p id="footer-copyright">© 2021–2025 Всички права запазени</p>
     </footer>
     <script type="application/ld+json">
     {
@@ -443,113 +489,346 @@
       ]
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Онлайн калкулатор за пътна помощ",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Транспортер Иван Иванов ЕООД",
-        "areaServed": ["Костинброд","Петрохан","Калотина","Сливница","Божурище","Драгоман","Гинци","Волуяк","Е80"]
-      },
-      "areaServed": ["Костинброд","Петрохан","Калотина","Сливница","Божурище","Драгоман","Гинци","Волуяк","Е80"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Тарифи пътна помощ",
-        "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Пътна помощ до 1500 кг"},"priceCurrency":"EUR","price":"40","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"EUR","price":"0.75","unitText":"km"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Пътна помощ 1500–2000 кг"},"priceCurrency":"EUR","price":"45","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"EUR","price":"0.85","unitText":"km"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Пътна помощ над 2000 кг"},"priceCurrency":"EUR","price":"50","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"EUR","price":"0.95","unitText":"km"}}
-        ]
-      },
-      "termsOfService": "Нощна такса 22:00–07:00 +30%. Допълнителни такси: кука, гуми, забавяне, канавка."
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Как се изчислява цената?","acceptedAnswer":{"@type":"Answer","text":"Въвеждате разстояние в едната посока, калкулаторът смята двупосочно и прилага тарифата според теглото. Ако сумата е под минимума, се начислява минималната цена."}},
-        {"@type":"Question","name":"Има ли нощна такса?","acceptedAnswer":{"@type":"Answer","text":"Да, между 22:00 и 07:00 се добавя 30% към изчислената стойност."}},
-        {"@type":"Question","name":"Какви са минималните цени?","acceptedAnswer":{"@type":"Answer","text":"Минимум 40 € за МПС до 1500 кг, 45 € за 1500–2000 кг и 50 € за над 2000 кг."}}
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "Как да използвам калкулатора за пътна помощ",
-      "description": "Научете как да изчислите точната цена за пътна помощ в Костинброд, Петрохан, Калотина за секунди с нашия онлайн калкулатор",
-      "totalTime": "PT30S",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "EUR",
-        "value": "40"
-      },
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "Онлайн калкулатор за пътна помощ"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Въведете основни данни",
-          "text": "Изберете тип услуга (пътна помощ, доставка гориво, смяна на гума), въведете разстояние в едната посока в километри и изберете тегло на МПС",
-          "position": 1,
-          "itemListElement": [
-            {
-              "@type": "HowToDirection",
-              "text": "Изберете услуга от падащото меню"
+    <script>
+        const RATE = 1.95583;
+        let currentLang = 'bg';
+        const translations = {
+            bg: {
+                headerTitle: "Калкулатор за Цена на Пътна Помощ",
+                headerSubtitle: "Единственият в България – изчислете точната цена за Костинброд, Петрохан, Калотина, Сливница, Божурище, Драгоман, Гинци, Волуяк, Е80 за секунди!",
+                labelService: "Тип услуга",
+                serviceTowing: "Пътна помощ / Репатриране",
+                serviceFuel: "Доставка на гориво",
+                serviceTire: "Смяна на гума",
+                labelDistance: "Разстояние в ЕДНАТА посока (км)",
+                labelWeight: "Тегло на МПС",
+                weightPlaceholder: "Изберете тегло",
+                weight1: "До 1500 кг (лек автомобил)",
+                weight2: "1500–2000 кг",
+                weight3: "Над 2000 кг (джип, бус, каравани)",
+                extraTitle: "Допълнителни условия",
+                labelNoHook: "Липса на кука (+5 € / 9.78 лв)",
+                labelBlockedTire: "Блокирала/липсваща гума (+20 € / 39.12 лв на брой)",
+                labelDelay: "Забавяне на място (+15 € / 29.34 лв на час)",
+                labelHeavyAccident: "Тежка катастрофа (+75 € / 146.69 лв)",
+                labelDitch: "Изваждане от канавка (+75 € / 146.69 лв)",
+                labelNight: "Нощна услуга 22:00–07:00 (+30%)",
+                calcBtn: "ИЗЧИСЛИ ТОЧНАТА ЦЕНА",
+                resultTitle: "ВАШАТА ТОЧНА ЦЕНА:",
+                callNow: "ОБАДИ СЕ СЕГА: 0877 845 569",
+                backHome: "← Начална страница",
+                footerCompany: "Транспортер Иван Иванов ЕООД",
+                footerAddress: "ул. Бяло море 16, Костинброд 2230",
+                footerLicense: "Удостоверение №42-00048/28.01.2021",
+                footerCopyright: "© 2021–2025 Всички права запазени",
+                breakdownBase: "Базова цена (вкл. отиване и връщане)",
+                breakdownNoHook: "Липса на кука",
+                breakdownTires: "Блокирали гуми",
+                breakdownDelay: "Забавяне",
+                breakdownHeavy: "Тежка катастрофа",
+                breakdownDitch: "Изваждане от канавка",
+                breakdownNight: "Нощна услуга (+30%)",
+                breakdownTotal: "КРАЙНА ЦЕНА"
             },
-            {
-              "@type": "HowToDirection",
-              "text": "Въведете километри до мястото на повредата"
+            en: {
+                headerTitle: "Road Assistance Price Calculator",
+                headerSubtitle: "The only one in Bulgaria – calculate exact prices for Kostinbrod region and E80 in seconds!",
+                labelService: "Service type",
+                serviceTowing: "Roadside assistance / Towing",
+                serviceFuel: "Fuel delivery",
+                serviceTire: "Tyre change",
+                labelDistance: "Distance one way (km)",
+                labelWeight: "Vehicle weight",
+                weightPlaceholder: "Select weight",
+                weight1: "Up to 1500 kg (car)",
+                weight2: "1500–2000 kg",
+                weight3: "Over 2000 kg (SUV, van, caravans)",
+                extraTitle: "Additional conditions",
+                labelNoHook: "Missing hook (+€5 / 9.78 BGN)",
+                labelBlockedTire: "Blocked/missing tire (+€20 / 39.12 BGN per tire)",
+                labelDelay: "Delay on site (+€15 / 29.34 BGN per hour)",
+                labelHeavyAccident: "Heavy accident (+€75 / 146.69 BGN)",
+                labelDitch: "Recovery from ditch (+€75 / 146.69 BGN)",
+                labelNight: "Night service 22:00–07:00 (+30%)",
+                calcBtn: "CALCULATE EXACT PRICE",
+                resultTitle: "YOUR EXACT PRICE:",
+                callNow: "CALL NOW: 0877 845 569",
+                backHome: "← Home Page",
+                footerCompany: "Transporter Ivan Ivanov Ltd",
+                footerAddress: "Byalo More 16 Str., Kostinbrod 2230",
+                footerLicense: "Certificate No.42-00048/28.01.2021",
+                footerCopyright: "© 2021–2025 All rights reserved",
+                breakdownBase: "Base price (round trip included)",
+                breakdownNoHook: "Missing hook",
+                breakdownTires: "Blocked tires",
+                breakdownDelay: "Delay",
+                breakdownHeavy: "Heavy accident",
+                breakdownDitch: "Ditch recovery",
+                breakdownNight: "Night surcharge (+30%)",
+                breakdownTotal: "TOTAL PRICE"
             },
-            {
-              "@type": "HowToDirection",
-              "text": "Изберете категория тегло на автомобила"
+            de: {
+                headerTitle: "Preisrechner Pannenhilfe",
+                headerSubtitle: "Der einzige in Bulgarien – berechnen Sie den Preis für Kostinbrod und E80!",
+                labelService: "Dienstleistungstyp",
+                serviceTowing: "Pannenhilfe / Abschleppen",
+                serviceFuel: "Kraftstofflieferung",
+                serviceTire: "Reifenwechsel",
+                labelDistance: "Entfernung (km)",
+                labelWeight: "Fahrzeuggewicht",
+                weightPlaceholder: "Gewicht auswählen",
+                weight1: "Bis 1500 kg (PKW)",
+                weight2: "1500–2000 kg",
+                weight3: "Über 2000 kg (SUV, Van)",
+                extraTitle: "Zusätzliche Bedingungen",
+                labelNoHook: "Fehlender Haken (+5 € / 9.78 лв)",
+                labelBlockedTire: "Blockierter Reifen (+20 € / 39.12 лв pro Reifen)",
+                labelDelay: "Verzögerung vor Ort (+15 € / 29.34 лв/Std)",
+                labelHeavyAccident: "Schwerer Unfall (+75 € / 146.69 лв)",
+                labelDitch: "Bergung aus Graben (+75 € / 146.69 лв)",
+                labelNight: "Nachtdienst (+30%)",
+                calcBtn: "PREIS BERECHNEN",
+                resultTitle: "IHR GENAUER PREIS:",
+                callNow: "JETZT ANRUFEN: 0877 845 569",
+                backHome: "← Startseite",
+                footerCompany: "Transporter Ivan Ivanov GmbH",
+                footerAddress: "Byalo More 16, Kostinbrod 2230",
+                footerLicense: "Zertifikat Nr.42-00048/28.01.2021",
+                footerCopyright: "© 2021–2025 Alle Rechte vorbehalten",
+                breakdownBase: "Grundpreis (Hin- und Rückfahrt)",
+                breakdownNoHook: "Haken fehlt",
+                breakdownTires: "Blockierte Reifen",
+                breakdownDelay: "Verzögerung",
+                breakdownHeavy: "Unfall",
+                breakdownDitch: "Bergung",
+                breakdownNight: "Nachtzuschlag",
+                breakdownTotal: "GESAMTPREIS"
+            },
+            tr: {
+                headerTitle: "Yol Yardımı Hesaplayıcı",
+                headerSubtitle: "Bulgaristan'da tek – Kostinbrod ve E80 için saniyeler içinde fiyat hesaplayın!",
+                labelService: "Hizmet türü",
+                serviceTowing: "Yol yardımı / Çekici",
+                serviceFuel: "Yakıt teslimi",
+                serviceTire: "Lastik değişimi",
+                labelDistance: "Mesafe (km)",
+                labelWeight: "Araç ağırlığı",
+                weightPlaceholder: "Ağırlık seçin",
+                weight1: "1500 kg'a kadar",
+                weight2: "1500–2000 kg",
+                weight3: "2000 kg üzeri",
+                extraTitle: "Ek koşullar",
+                labelNoHook: "Çeki kancası eksik (+5 € / 9.78 лв)",
+                labelBlockedTire: "Bloke lastik (+20 € / 39.12 лв adet)",
+                labelDelay: "Gecikme (+15 € / 29.34 лв saat)",
+                labelHeavyAccident: "Ağır kaza (+75 € / 146.69 лв)",
+                labelDitch: "Hendek kurtarma (+75 € / 146.69 лв)",
+                labelNight: "Gece servisi (+30%)",
+                calcBtn: "FİYAT HESAPLA",
+                resultTitle: "TAM FİYATINIZ:",
+                callNow: "ARA: 0877 845 569",
+                backHome: "← Ana Sayfa",
+                footerCompany: "Transporter Ivan Ivanov Ltd",
+                footerAddress: "Byalo More 16 Sok., Kostinbrod 2230",
+                footerLicense: "Sertifika No.42-00048/28.01.2021",
+                footerCopyright: "© 2021–2025 Tüm hakları saklıdır",
+                breakdownBase: "Temel fiyat (gidiş-dönüş dahil)",
+                breakdownNoHook: "Kanca eksik",
+                breakdownTires: "Bloke lastikler",
+                breakdownDelay: "Gecikme",
+                breakdownHeavy: "Ağır kaza",
+                breakdownDitch: "Kurtarma",
+                breakdownNight: "Gece farkı",
+                breakdownTotal: "TOPLAM FİYAT"
+            },
+            ro: {
+                headerTitle: "Calculator Asistență Rutieră",
+                headerSubtitle: "Singurul din Bulgaria – calculează prețul pentru Kostinbrod și E80!",
+                labelService: "Tip serviciu",
+                serviceTowing: "Asistență rutieră / Tractare",
+                serviceFuel: "Livrare combustibil",
+                serviceTire: "Schimbare anvelopă",
+                labelDistance: "Distanța (km)",
+                labelWeight: "Greutatea vehiculului",
+                weightPlaceholder: "Selectați greutatea",
+                weight1: "Până la 1500 kg",
+                weight2: "1500–2000 kg",
+                weight3: "Peste 2000 kg",
+                extraTitle: "Condiții suplimentare",
+                labelNoHook: "Lipsă cârlig (+5 € / 9.78 лв)",
+                labelBlockedTire: "Anvelopă blocată (+20 € / 39.12 лв buc.)",
+                labelDelay: "Întârziere (+15 € / 29.34 лв/oră)",
+                labelHeavyAccident: "Accident grav (+75 € / 146.69 лв)",
+                labelDitch: "Scoatere din șanț (+75 € / 146.69 лв)",
+                labelNight: "Serviciu de noapte (+30%)",
+                calcBtn: "CALCULEAZĂ PREȚUL",
+                resultTitle: "PREȚUL TĂU EXACT:",
+                callNow: "SUNĂ: 0877 845 569",
+                backHome: "← Pagina principală",
+                footerCompany: "Transporter Ivan Ivanov SRL",
+                footerAddress: "Byalo More 16, Kostinbrod 2230",
+                footerLicense: "Certificat Nr.42-00048/28.01.2021",
+                footerCopyright: "© 2021–2025 Toate drepturile rezervate",
+                breakdownBase: "Preț de bază (inclusiv tur-retur)",
+                breakdownNoHook: "Fără cârlig",
+                breakdownTires: "Anvelope blocate",
+                breakdownDelay: "Întârziere",
+                breakdownHeavy: "Accident grav",
+                breakdownDitch: "Scoatere șanț",
+                breakdownNight: "Sursă de noapte",
+                breakdownTotal: "PREȚ TOTAL"
             }
-          ]
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Добавете допълнителни условия",
-          "text": "Маркирайте допълнителни услуги като липса на кука, блокирали гуми, забавяне, катастрофа или нощна услуга",
-          "position": 2
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Изчислете и вижте цената",
-          "text": "Натиснете бутона ИЗЧИСЛИ ТОЧНАТА ЦЕНА и моментално ще видите детайлна разбивка в евро и левове",
-          "position": 3
+        };
+
+        window.onload = function() {
+            document.querySelector('.language-selector button[onclick="setLanguage(\'bg\')"]').classList.add('active');
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.getElementById('header-title').innerText = t.headerTitle;
+            document.getElementById('header-subtitle').innerText = t.headerSubtitle;
+            document.getElementById('label-service').innerText = t.labelService;
+            document.getElementById('serviceType').options[0].text = t.serviceTowing;
+            document.getElementById('serviceType').options[1].text = t.serviceFuel;
+            document.getElementById('serviceType').options[2].text = t.serviceTire;
+            document.getElementById('label-distance').innerText = t.labelDistance;
+            document.getElementById('label-weight').innerText = t.labelWeight;
+            document.getElementById('weight').options[0].text = t.weightPlaceholder;
+            document.getElementById('weight').options[1].text = t.weight1;
+            document.getElementById('weight').options[2].text = t.weight2;
+            document.getElementById('weight').options[3].text = t.weight3;
+            document.getElementById('extra-title').innerText = t.extraTitle;
+            document.getElementById('label-noHook').innerText = t.labelNoHook;
+            document.getElementById('label-blockedTire').innerText = t.labelBlockedTire;
+            document.getElementById('label-delay').innerText = t.labelDelay;
+            document.getElementById('label-heavyAccident').innerText = t.labelHeavyAccident;
+            document.getElementById('label-ditch').innerText = t.labelDitch;
+            document.getElementById('label-night').innerText = t.labelNight;
+            document.getElementById('calc-btn').innerText = t.calcBtn;
+            document.getElementById('result-title').innerText = t.resultTitle;
+            document.getElementById('call-now').innerText = t.callNow;
+            document.getElementById('back-home').innerText = t.backHome;
+            document.getElementById('footer-company').innerText = t.footerCompany;
+            document.getElementById('footer-address').innerText = t.footerAddress;
+            document.getElementById('footer-license').innerText = t.footerLicense;
+            document.getElementById('footer-copyright').innerText = t.footerCopyright;
+            document.querySelectorAll('.language-selector button').forEach(btn => btn.classList.remove('active'));
+            if (event && event.target) {
+                let btn = event.target.closest('button');
+                if (btn) btn.classList.add('active');
+            }
         }
-      ]
-    }
+
+        function changeTire(val) {
+            let input = document.getElementById('tireCount');
+            let newValue = parseInt(input.value) + val;
+            if (newValue >= 0 && newValue <= 4) {
+                input.value = newValue;
+                document.getElementById('blockedTire').checked = (newValue > 0);
+            }
+        }
+
+        function changeDelay(val) {
+            let input = document.getElementById('delayHours');
+            let newValue = parseInt(input.value) + val;
+            if (newValue >= 0) {
+                input.value = newValue;
+                document.getElementById('delay').checked = (newValue > 0);
+            }
+        }
+
+        function calculate() {
+            const distanceInput = parseFloat(document.getElementById('distance').value) || 0;
+            const weight = document.getElementById('weight').value;
+            const service = document.getElementById('serviceType').value;
+            const t = translations[currentLang];
+
+            if (distanceInput <= 0) {
+                alert(currentLang === 'bg' ? "Моля, въведете разстояние!" : "Please enter distance!");
+                return;
+            }
+            if (service === 'towing' && !weight) {
+                alert(currentLang === 'bg' ? "Моля, изберете тегло на автомобила!" : "Please select vehicle weight!");
+                return;
+            }
+
+            // КОРЕКЦИЯ: Километрите се смятат в двете посоки
+            const totalKm = distanceInput * 2;
+
+            let basePrice = 0;
+            if (service === 'towing') {
+                let minFee = 0;
+                let pricePerKm = 0;
+
+                if (weight === "1500") {
+                    minFee = 40;
+                    pricePerKm = 0.75;
+                } else if (weight === "2000") {
+                    minFee = 45;
+                    pricePerKm = 0.85;
+                } else if (weight === "over2000") {
+                    minFee = 50;
+                    pricePerKm = 0.95;
+                }
+
+                // Логика: Километри х 2 посоки х цена. Ако е под минимума -> плаща се минимума.
+                let distanceCost = totalKm * pricePerKm;
+                basePrice = Math.max(minFee, distanceCost);
+
+            } else {
+                // Доставка гориво/гума (мин. 30€ или 0.80€ на общ км)
+                basePrice = Math.max(30, totalKm * 0.8);
+            }
+
+            let total = basePrice;
+            let breakdownHTML = `<div class="breakdown-item"><span>${t.breakdownBase}</span><span>${basePrice.toFixed(2)} €<br>(${(basePrice * RATE).toFixed(2)} лв)</span></div>`;
+
+            if (document.getElementById('noHook').checked) {
+                total += 5;
+                breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownNoHook}</span><span>5.00 €<br>(9.78 лв)</span></div>`;
+            }
+
+            const tires = parseInt(document.getElementById('tireCount').value) || 0;
+            if (tires > 0) {
+                let cost = tires * 20;
+                total += cost;
+                breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownTires} (x${tires})</span><span>${cost.toFixed(2)} €<br>(${(cost * RATE).toFixed(2)} лв)</span></div>`;
+            }
+
+            const hours = parseInt(document.getElementById('delayHours').value) || 0;
+            if (hours > 0) {
+                let cost = hours * 15;
+                total += cost;
+                breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownDelay} (x${hours}h)</span><span>${cost.toFixed(2)} €<br>(${(cost * RATE).toFixed(2)} лв)</span></div>`;
+            }
+
+            if (document.getElementById('heavyAccident').checked) {
+                total += 75;
+                breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownHeavy}</span><span>75.00 €<br>(146.69 лв)</span></div>`;
+            }
+
+            if (document.getElementById('ditch').checked) {
+                total += 75;
+                breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownDitch}</span><span>75.00 €<br>(146.69 лв)</span></div>`;
+            }
+
+            if (document.getElementById('night').checked) {
+                let nightSurcharge = total * 0.30;
+                total += nightSurcharge;
+                breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownNight}</span><span>${nightSurcharge.toFixed(2)} €<br>(${(nightSurcharge * RATE).toFixed(2)} лв)</span></div>`;
+            }
+
+            breakdownHTML += `<div class="breakdown-item"><span>${t.breakdownTotal}</span><span>${total.toFixed(2)} €<br>(${(total * RATE).toFixed(2)} лв)</span></div>`;
+
+            document.getElementById('totalEUR').innerText = total.toFixed(2) + " €";
+            document.getElementById('totalBGN').innerText = (total * RATE).toFixed(2) + " лв";
+            document.getElementById('breakdown').innerHTML = breakdownHTML;
+            document.getElementById('result').style.display = 'block';
+
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Калкулатор за пътна помощ Костинброд",
-      "url": "https://patna-pomosht-kostinbrod.bg/kalkulator.html",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      },
-      "featureList": "Изчисляване цена пътна помощ, Прозрачни тарифи, Многоезично, Моментални резултати, Мобилно оптимизиран",
-      "screenshot": "https://patna-pomosht-kostinbrod.bg/images/memi2.jpg"
-    }
-    </script>
-    
-    <!-- Optimized Calculator Script - Defer loaded -->
-    <script src="js/calculator.js" defer></script>
- </body>
- </html>
+</body>
+</html>

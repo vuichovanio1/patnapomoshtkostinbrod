@@ -599,7 +599,7 @@ section h2 {
 /* ========== FOOTER ========== */
 footer {
   background: var(--dark);
-  color: #fff;
+  color: #f8f9fa;
   padding: 2rem 1rem;
   margin-top: 3rem;
 }
@@ -613,18 +613,51 @@ footer {
 }
 
 footer h3 {
-  color: var(--primary);
+  color: #FF9A3C;
   margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+footer p {
+  color: #e9ecef;
+  line-height: 1.8;
 }
 
 footer a {
-  color: rgba(255, 255, 255, 0.8);
+  color: #e9ecef;
   text-decoration: none;
   transition: var(--transition);
+  font-weight: 500;
 }
 
 footer a:hover {
-  color: var(--primary);
+  color: #FFB366;
+  text-decoration: underline;
+}
+
+footer i.fas,
+footer i.fab {
+  color: #FF9A3C;
+  margin-right: 8px;
+}
+
+.footer-social a i {
+  color: #fff;
+}
+
+.footer-hours {
+  color: #2ECC71 !important;
+  font-weight: 800 !important;
+}
+
+.footer-certificate {
+  background: rgba(255, 154, 60, 0.15) !important;
+  border: 1px solid rgba(255, 154, 60, 0.3);
+}
+
+.footer-copyright {
+  color: #dee2e6 !important;
+  opacity: 1 !important;
 }
 
 /* ========== PARTNERS ========== */

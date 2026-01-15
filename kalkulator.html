@@ -559,23 +559,23 @@
             document.getElementById('totalBGN').innerText = (total * RATE).toFixed(2) + " лв";
             document.getElementById('breakdown').innerHTML = breakdownHTML;
             document.getElementById('result').style.display = 'block';
-+
-+            if (typeof gtag !== 'undefined') {
-+                gtag('event', 'calculate_price', {
-+                    'event_category': 'engagement',
-+                    'event_label': `${service}|${weight || 'n/a'}`,
-+                    'value': total
-+                });
-+            }
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'calculate_price', {
+                    'event_category': 'engagement',
+                    'event_label': `${service}|${weight || 'n/a'}`,
+                    'value': total
+                });
+            }
  
-             document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
-         }
-+        const callCta = document.getElementById('call-now');
-+        if (callCta && typeof gtag !== 'undefined') {
-+            callCta.addEventListener('click', () => {
-+                gtag('event', 'generate_lead', { event_category: 'Contact', event_label: 'Call from calculator' });
-+            });
-+        }
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        const callCta = document.getElementById('call-now');
+        if (callCta && typeof gtag !== 'undefined') {
+            callCta.addEventListener('click', () => {
+                gtag('event', 'generate_lead', { event_category: 'Contact', event_label: 'Call from calculator' });
+            });
+        }
      </script>
  </body>
  </html>
